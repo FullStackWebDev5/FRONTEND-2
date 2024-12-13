@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model</title>
+  <style>
+    /* * {
+      box-sizing: border-box;
+    } */
+
+    #page-heading {
+      border: 1px solid black;
+      /* padding-top: 20px;
+      padding-right: 10px;
+      padding-bottom: 40px;
+      padding-left: 30px; */
+      /* padding: 20px 10px 15px 25px; */
+
+      /* margin-top: 50px;
+      margin-right: 80px;
+      margin-bottom: 75px;
+      margin-left: 35px; */
+      /* margin: 50px 80px 75px 35px; */
+    }
+
+    /* #custom-heading {
+      padding: 10px;
+      border: 1px solid black;
+      margin: 25px;
+    } */
+
+    #box-1 {
+      text-align: center;
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      border: 2px solid black;
+      margin: 20px;
+      box-sizing: content-box;
+    }
+
+    #box-2 {
+      text-align: center;
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      border: 2px solid black;
+      margin: 20px;
+      box-sizing: border-box;
+    }
+
+    /* #parent {
+      height: 600px;
+      width: 300px;
+      border: 1px solid black;
+    }
+
+    .child {
+      border: 2px solid black;
+      height: 200px;
+      width: 200px;
+      padding: 20px;
+    } */
+  </style>
+</head>
+<body>
+  <!-- <h1 id="custom-heading">Box Model</h1> -->
+
+  <div id="box-1">
+    BOX 1
+  </div>
+  <div id="box-2">
+    BOX 2
+  </div>
+
+  <!-- <div id="parent">
+    <div class="child">CHILD 1</div>
+    <div class="child">CHILD 2</div>
+    <div class="child">CHILD 3</div>
+  </div> -->
+</body>
+</html>
+
+<!--
+  # Padding ***: Space around the content, within the border
+    - padding-top: Top padding
+    - padding-right: Right padding
+    - padding-bottom: Bottom padding
+    - padding-left: Left padding
+    - padding: Padding on all four directions
+      - One value: Applied to all four directions (T, R, B, L)
+      - Two values: [Top and bottom] [Left and right]
+      - Three values: [Top] [Right and left] [Bottom]
+      - Four values: [Top] [Right] [Bottom] [Left]
+
+  # Margin ***: Space around the border and before the next element
+    - margin-top: Top margin
+    - margin-right: Right margin
+    - margin-bottom: Bottom margin
+    - margin-left: Left margin
+    - margin: Margin on all four directions
+      - One value: Applied to all four directions (T, R, B, L)
+      - Two values: [Top and bottom] [Left and right]
+      - Three values: [Top] [Right and left] [Bottom]
+      - Four values: [Top] [Right] [Bottom] [Left]
+
+  # Box Model ***: Every element in webpage as a box
+    - Components
+      - Content (Blue): Dimensions of the element
+      - Padding (Green): Space inside the border
+      - Border (Orange): Border width
+      - Margin (Brown): Space outside the border 
+    - box-sizing:
+     - content-box: (Default): Width and height should be applied to the content box (Includes only content)
+     - border-box: Width and height should be applied to the border box (Include content + padding + border-width)

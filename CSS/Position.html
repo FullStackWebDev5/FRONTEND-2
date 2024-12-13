@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position</title>
+  <style>
+    /* #box-1 {
+      width: 200px;
+      height: 200px;
+      background-color: aliceblue;
+      border: 1px solid black;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    #cross {
+      position: relative;
+      top: -50px;
+      left: 100px;
+      background-color: white;
+      padding: 5px;
+      border: 1px solid red;
+      border-radius: 50%;
+    } */
+  /* 
+    #box-1 {
+      width: 200px;
+      height: 200px;
+      background-color: aliceblue;
+      border: 1px solid black;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      position: absolute;
+    } */
+
+    #parent {
+      background-color: aliceblue;
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    #child {
+      background-color: seagreen;
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      box-sizing: border-box;
+      position: absolute;
+      /* top: 0;
+      right: 0; */
+
+      /* bottom: 0;
+      right: 0; */
+
+      /* left: 0;
+      bottom: 0; */
+
+      top: 100px;
+      left: 100px;
+    }
+
+    #css-logo {
+      position: fixed;
+      right: 0px;
+      bottom: 0px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 10px 0;
+      background-color: lightblue;
+    }
+
+    ul li {
+      display: inline-block;
+      font-size: 20px;
+      padding: 0 60px;
+    }
+
+    ul li a {
+      text-decoration: none;
+    }
+
+    #navbar {
+      position: sticky;
+      top: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Position</h1>
+  <ul id="navbar">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">Sign Up</a></li>
+    <li><a href="#">Sign In</a></li>
+  </ul>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nam expedita earum quidem inventore fugit architecto, aut praesentium eos officiis assumenda dolorem obcaecati aliquam eveniet exercitationem quod, repudiandae explicabo. Unde distinctio quam hic. Ratione, voluptates maiores ut doloremque repellendus aspernatur. Adipisci pariatur reiciendis quas perspiciatis, dolores quae beatae! Nostrum corporis, pariatur iusto quia explicabo, odit enim illum inventore eligendi quae natus blanditiis adipisci id illo suscipit, facilis distinctio cum nihil esse sint magni aspernatur laboriosam? Eos dolore accusamus unde voluptatem hic inventore aperiam sequi omnis laboriosam, quasi facilis ut vero expedita numquam non consequuntur temporibus impedit, ad dicta vitae! Odit quod adipisci velit animi et. Impedit possimus facilis laborum tempore ullam unde? Rerum libero ab a distinctio repellat, maxime praesentium, voluptas unde dolores quod adipisci. Nobis sit dignissimos perspiciatis non odit deserunt asperiores in. Eligendi, officiis et atque quo, voluptates vero est nam quas quam laboriosam nihil quos maxime at eius non expedita cum excepturi corporis eaque cupiditate eveniet quia. Consequuntur delectus repellat voluptatem inventore unde incidunt hic odio provident quia quod consectetur consequatur, rerum id! Exercitationem magni nisi aliquam veritatis quaerat! Architecto asperiores voluptatibus voluptates fugit dolorum, totam, mollitia error quisquam repellat, doloribus obcaecati doloremque nobis voluptate fugiat debitis aspernatur ratione culpa! Ipsa magnam repellendus, neque optio quo commodi modi saepe facere hic a tempora eveniet eos, eius iusto? Rerum nemo, similique nisi minus omnis velit amet non voluptas aliquam laboriosam. Accusantium ducimus laboriosam, saepe autem illo voluptas doloremque voluptate adipisci totam voluptatum laudantium, veniam aspernatur nesciunt error et. Aperiam qui asperiores praesentium, reiciendis libero quae eius at non pariatur maiores expedita quo. Quas delectus laborum iste sint eum, error accusamus similique dolorum magni voluptate, non culpa ut ducimus voluptatibus nemo deserunt amet quo. Dolorem rem aliquid provident nulla quibusdam consectetur vero maxime quas? Amet iste sint atque provident.</p>
+
+  <!-- POSITION: RELATIVE -->
+  <!-- <div id="box-1">
+    BOX 1<br>
+    <span id="cross">❌</span>
+  </div> -->
+
+  <!-- <div id="box-1">
+    BOX 1
+  </div> -->
+
+  <div id="parent">
+    <div id="child"></div>
+  </div>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident mollitia at dolorum soluta similique, laborum fugiat aperiam ea magni eveniet cumque cum nulla velit unde tempore nemo ducimus? Impedit omnis perspiciatis quibusdam non nesciunt officiis tempora consectetur magnam provident, quos cum modi repellat delectus, rem possimus veritatis. Reprehenderit nobis, quisquam voluptatum praesentium repellendus consectetur autem consequuntur laboriosam sunt perferendis, atque harum. Qui alias doloribus illum, quod itaque necessitatibus fugiat, reprehenderit repudiandae rem eveniet aperiam ullam provident laboriosam sapiente eaque dolor! Nisi fugiat, inventore ratione aliquam nostrum dolore temporibus provident recusandae dolor repellendus beatae, tempore quam impedit! Aliquid, quasi. Odit eligendi voluptatibus, iure, alias tempora veritatis iusto nostrum dignissimos accusamus in deserunt, a cum consectetur cupiditate rem molestias voluptates maiores eius iste. Optio ratione recusandae, doloribus, ex ipsam eius ullam velit commodi dolorem, consectetur repellendus eos odit aut placeat adipisci est vitae provident illum consequuntur libero cum harum? Accusamus magni ipsa necessitatibus voluptatum ipsum asperiores, tempora exercitationem corrupti veniam nulla nihil reiciendis eum reprehenderit sapiente sunt ea. Deleniti, ut alias suscipit explicabo, ipsam quaerat obcaecati tempore, soluta cum atque repellendus nisi. Velit autem neque totam doloremque. Nihil itaque velit modi minus dolores dolor nemo officia animi corporis quaerat, minima architecto quia ab hic assumenda, libero reprehenderit qui aspernatur officiis sit ullam optio? Eos, porro blanditiis ipsa labore nisi mollitia saepe tenetur? Soluta iusto quas, incidunt quidem ipsam ad laboriosam modi impedit ducimus facilis, tempora repellat beatae libero ipsa pariatur dolores distinctio rem aliquid molestias temporibus! Facilis et repudiandae eveniet quia autem! Delectus, sint temporibus? Alias animi dolorem numquam ad ut, minus ea excepturi consectetur facere amet hic perferendis fugit, corrupti voluptatibus eius perspiciatis blanditiis quia officiis inventore? Tempore fuga eos distinctio laudantium a harum at, sit architecto? Id molestias quibusdam illum error recusandae dolor tempore, voluptas saepe quasi dolore eum neque quis provident molestiae porro adipisci voluptatibus odio. Deleniti, animi? Totam a obcaecati error nulla velit repellat voluptas. Laborum mollitia vero necessitatibus corporis, corrupti dolore odio dolorum quaerat velit amet omnis nam, libero praesentium? Sapiente corporis assumenda rem esse quia dolorem, obcaecati doloribus suscipit velit laudantium aut tempore cumque atque! Rerum repudiandae odio rem veritatis, eaque sit optio consequatur voluptates voluptate. Ab, magni ullam! Tempora suscipit mollitia saepe quibusdam assumenda atque, itaque deleniti ex illo magnam quasi magni quia, in deserunt porro iusto error beatae fugiat molestias omnis nemo eaque. Beatae, unde maiores, nam molestiae aspernatur autem adipisci deleniti libero eos eaque et atque fugit officia neque dolorum hic, animi iure error eius vitae! Voluptatum reiciendis deleniti quae iusto aperiam id magni fugiat neque, officia delectus ea, reprehenderit maxime repellat cupiditate quod totam dolor quo. Cum, ex perspiciatis. Commodi dolor iure magni saepe sapiente eveniet quae quasi reprehenderit quia repellat voluptas eius officiis maiores voluptatem sequi nisi culpa error dolores quod aliquid vel vero, sunt ut non? Nemo aut aperiam tenetur in mollitia ratione ab nihil earum esse quisquam id, magnam quibusdam dicta magni explicabo illo qui numquam ducimus! Provident officia ea doloribus tempora quod voluptas impedit nisi nostrum facere placeat.</p>
+
+  <img src="https://png.pngtree.com/png-vector/20220607/ourmid/pngtree-vector-css-icon-code-black-button-vector-png-image_13830248.png" width="100" height="100" id="css-logo">
+</body>
+</html>
+
+<!--
+  # Position: To position a particular element based on it's original position, webpage boundaries, etc.
+    - Values:
+      - static (default)
+      - relative **: Relative to the original position
+      - absolute **: Relative to the nearest positioned ancestor/ webpage boundaries
+      - fixed: Fixed positioning
+      - sticky: Sticky positioning (Relative, Fixed)
+
+      - Additional porperties:
+        - top: Top position
+        - left: Left position
+        - bottom: Bottom position
+        - right: Right position
+-->

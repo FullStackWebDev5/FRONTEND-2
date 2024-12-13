@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+  <title>CSS Selectors</title>
+  <style>
+    h1 {
+      text-align: center;
+      color: darkcyan;
+      background-color: lightcyan;
+    }
+
+    h2 {
+      color: lightslategray;
+    }
+
+    .box {
+      border: 1px solid darkgray;
+      padding: 10px;
+      margin: 10px;
+      background-color: lightcyan;
+    }
+
+    .green-color {
+      color: green;
+    }
+
+    #important-point {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #imp-word {
+      color: darkblue;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    #js-heading:hover {
+      cursor: pointer;
+    }
+
+    #footer {
+      text-align: center;
+      padding: 10px;
+      font-style: italic;
+    }
+
+    /* * {
+      border: 1px solid black;
+    } */
+
+    /* h2, #footer, .box {
+      border: 1px solid black;
+    } */
+
+    /* -------------------------- */
+    /* #additional-pointers-list::first-letter {
+      font-size: 60px;
+    } */
+
+    /* a[target="_blank"] {
+      background-color: yellow;
+    } */
+  </style>
+</head>
+<body>
+  <h1>Web Development</h1>
+
+  <div class="box">
+    <h2 class="green-color">HTML</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime fuga possimus impedit <span id="imp-word">interesting webpages</span>. Fugiat pariatur asperiores voluptates dolore, debitis quia perspiciatis eos impedit sapiente minima, similique vitae deserunt numquam soluta quae?</p>
+  </div>
+
+  <div class="box">
+    <h2>CSS</h2>
+    <p class="green-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime fuga possimus impedit. Fugiat pariatur asperiores voluptates dolore, debitis quia perspiciatis eos impedit sapiente minima, similique vitae deserunt numquam soluta quae?</p>
+  </div>
+
+  <div class="box">
+    <h2 id="js-heading">JavaScript</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime fuga possimus impedit. Fugiat pariatur asperiores voluptates dolore, debitis quia perspiciatis eos impedit sapiente minima, similique vitae deserunt numquam soluta quae?</p>
+  </div>
+
+  <div class="box">
+    <h2>Additional pointers</h2>
+    <ul id="additional-pointers-list">
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique maxime aperiam excepturi accusantium tempora necessitatibus ipsam quibusdam provident doloribus eius.</li>
+      <li class="green-color">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis et, explicabo voluptatibus veritatis architecto quas totam. Laborum iusto quae sapiente harum voluptate mollitia architecto nulla, qui aperiam rerum eligendi debitis.</li>
+      <li id="important-point">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo provident ducimus consequuntur excepturi illum commodi quasi, laboriosam recusandae officia autem cupiditate distinctio. Consequuntur, aut autem.</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>References</h2>
+    <ul>
+      <li>
+        <a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank">W3Schools CSS Selectors</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors">MDN Web Docs CSS Selectors</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="green-color" id="footer">
+    &copy; Velagana Pvt. Ltd.
+  </div>
+</body>
+</html>
+
+<!--
+  # CSS Selectors
+    - Simple Selectors ***:
+      - Element Selector (h1, p, span, div, img, a, etc.)
+      - Class Selector (.class)
+        - Similar styles to multiple elements
+      - ID Selector (#id)
+        - Uniquely select a single element
+      - Universal Selector (*)
+        - Select all elements
+      - Grouping Selectors (p, .class, #id)
+    - Combinator Selectors *
+      - Descendant combinator (parent child)
+        - Style all child elements within the parent (heirarchy depth doesn't matter)
+      - Child combinator
+        - Style all child elements within the parent (excluding descendants)
+    - Pseudo-class Selectors (:hover)
+-->

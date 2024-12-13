@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <h1>HTML Forms</h1>
+    <form>
+      <div>
+        First Name: <input type="text" placeholder="First Name">
+      </div>
+      <div>
+        Last Name: <input type="text" placeholder="Last Name">
+      </div>
+      <div>
+        Email: <input type="email" placeholder="Email">
+      </div>
+      <div>
+        Password: <input type="password" placeholder="Password">
+      </div>
+      <div>
+        Age: <input type="number" placeholder="Age">
+      </div>
+      <div>
+        Gender: 
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Others
+      </div>
+      <div>
+        Hobbies: 
+        <input type="checkbox" name="hobbies"> Swimming
+        <input type="checkbox" name="hobbies"> Coding
+        <input type="checkbox" name="hobbies"> Cycling
+      </div>
+      <div>
+        Select you date of travel: <input type="date" min="2024-12-06" max="2024-12-21">
+      </div>
+      <div>
+        Upload your resume: <input type="file">
+      </div>
+      <div>
+        Select your city:
+        <select>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Delhi">Delhi</option>
+        </select>
+      </div>
+      <div>
+        Enter your bio:
+        <textarea rows="5" cols="50" placeholder="Please enter your bio"></textarea>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </body>
+</html>
+
+<!--
+# Forms
+    - Tags
+      - form: Wrapping tag for HTML forms
+      - input: Input field for user input
+        - 'type' attribute
+          - text: Text input
+          - number: Number input
+          - email: Email input
+          - password: Password input
+          - radio: Single selection
+            - checked: Select specific radio option
+          - checkbox: Multiple selection
+            - checked: Select specific checkbox option
+          - date: Date input
+            - min,max: Specify start and end dates
+          - file: Input for file upload
+        - 'name' attribute: Provide name for input field
+        - 'value' attribute: Provide default value for input field
+        - 'required' attribute: Make an input field required
+        - 'disabled' attribute: Disable an input field
+        - 'placeholder' attribute: Provide a hint for input field
+      - button: Create a button
+        - 'type' attribute
+          - submit: Used to submit a form
+          - reset: Used to reset form fields
+      - select: Dropdown (Single selection)
+        - option tag: Individual options
+          - selected: To default a specific option
+      - textarea: Larger text area (for descriptions, bio, feedbacks, etc.)
+        - rows, cols: Specify dimensions
+    - Syntax:
+      <form>
+        <input type="text">
+        <button type="submit">Submit</button>
+      </form>
+-->
