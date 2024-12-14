@@ -1,0 +1,98 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #002349;
+  font-family: "Lora", serif;
+  margin: 0;
+}
+
+/* ---- NAVBAR ---- */
+#navbar {
+  background-color: #002349;
+}
+
+#navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#navbar ul li {
+  display: inline-block;
+  padding: 10px 65px;
+}
+
+#navbar ul li a {
+  font-size: 24px;
+  text-decoration: none;
+  color: #E9F1FA;
+}
+
+#navbar ul li a:hover {
+  text-shadow: 2px 2px 5px white;
+}
+
+/* ---- CONTAINER ---- */
+#container {
+  margin: 0 8px;
+}
+
+#container .portfolio-sections {
+  background-color: #E9F1FA;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* ---- HEADER ---- */
+#header {
+  text-align: center;
+}
+
+#header img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* ---- CONTACT ---- */
+#contact {
+  text-align: center;
+}
+
+#contact ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#contact ul li a {
+  color: #002349;
+}
+
+#contact .contact-sub {
+  display: inline-block;
+  text-align: left;
+  margin: 0 10px;
+}
+
+/* ---- WORK EXPERIENCE ---- */
+
+/* ---- PROJECT ---- */
+
+/* ---- GENERIC ---- */
+.main-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.li-section {
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 10px;
+}
