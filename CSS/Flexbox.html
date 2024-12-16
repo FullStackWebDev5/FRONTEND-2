@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      /* flex-direction: column;
+      justify-content: center;
+      align-items: center; */
+
+      width: 1000px;
+      height: 1000px;
+      border: 1px solid black;
+    }
+
+    .product-card {
+      border: 1px solid black;
+      width: 300px;
+      text-align: center;
+      border-radius: 6px;
+      margin: 10px 5px;
+      height: max-content;
+    }
+
+    .product-card img {
+      width: 250px;
+      height: 250px;
+    }
+
+    .product-card .name {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .product-card .actual-price {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .product-card .mrp {
+      font-size: 12px;
+    }
+
+    .product-card .action-btns {
+      margin: 5px 0 10px;
+    }
+
+    .product-card .action-btns button {
+      padding: 10px 20px;
+      background-color: none;
+      border: none;
+      border-radius: 6px;;
+    }
+
+    .add-to-cart-btn {
+      background-color: #F7DC6F;
+    }
+
+    .buy-now-btn {
+      background-color: 	#ff9900;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/51FNnHjzhQL._AC_UY218_.jpg">
+      <div class="name">Boat Headphones 1</div>
+      <div>
+        <span class="actual-price">$249</span>
+        <span class="mrp">M.R.P: <s>$249</s></span>
+      </div>
+      <div class="action-btns">
+        <button class="add-to-cart-btn">Add to Cart</button>
+        <button  class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/51FNnHjzhQL._AC_UY218_.jpg">
+      <div class="name">Boat Headphones</div>
+      <div>
+        <span class="actual-price">$249</span>
+        <span class="mrp">M.R.P: <s>$249</s></span>
+      </div>
+      <div class="action-btns">
+        <button class="add-to-cart-btn">Add to Cart</button>
+        <button  class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/51FNnHjzhQL._AC_UY218_.jpg">
+      <div class="name">Boat Headphones</div>
+      <div>
+        <span class="actual-price">$249</span>
+        <span class="mrp">M.R.P: <s>$249</s></span>
+      </div>
+      <div class="action-btns">
+        <button class="add-to-cart-btn">Add to Cart</button>
+        <button  class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!--
+  # Flexbox ***
+    - Parent:
+      - display: flex
+      - flex-direction: Set the direction of the flex container's items
+        - row (default)
+          - Main axis: X axis/ Horizontal axis
+          - Cross axis: Y axis/ Vertical axis
+        - column
+          - Main axis: Y axis/ Vertical axis
+          - Cross axis: X axis/ Horizontal axis
+      - justify-content: Align the child elements across the 'main axis'
+        - center: Center
+        - space-between: Space in-between elements
+        - space-around: Equal space on both the sides (space in between will become 2* space)
+        - space-evenly: Equal space on both the sides (merge with space of adjacent element)
+        - start/left (default): Start
+        - end/right: End
+      - align items: Align the child elements across the 'cross axis'
+        - center: Center
+        - start (default): Start
+        - end: End
+      - flex-wrap: Wrap child elements if they exceed the parent container's width
+        - no-wrap: No wrapping
+        - wrap: Wrap child elements
+
+    # Pointer to remember:
+      - flex-direction: 
+        - row
+          - Main axis: X AXIS
+          - Cross axis: Y AXIS
+        - column
+          - Main axis: Y AXIS
+          - Cross axis: X AXIS
+
+      - Alignment
+        - Main axis: justify-content
+        - Cross axis: align-items
+      
+    # Additional properties:
+      - Child
+        - order: TO set order of individual elements
+        - flex-grow: To make an element grow larger in proportion to the rest of the elements
+        - flex-shrink: To make an element shrink smaller in proportion to the rest of the elements
+        - flex-basis: Initial size of the element before any other flex properties are applied
+        - align-self: Over-writes the align-items property given to parent
+-->

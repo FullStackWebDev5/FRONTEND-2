@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <style>
+    #container {
+      background-color: aliceblue;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: 80px;
+      grid-gap: 20px 10px;
+      /* grid-column-gap: 10px;
+      grid-row-gap: 20px; */
+      height: 600px;
+    }
+    .grid-item {
+      border: 1px solid black;
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>
+    <div class="grid-item">10</div>
+    <div class="grid-item">11</div>
+    <div class="grid-item">12</div>
+  </div>
+</body>
+</html>
+
+
+<!--
+  # Grid Layout
+    - Parent
+      - display: grid
+      - grid-template-columns: Define number of columns with dimensions
+      - grid-template-rows: Define number of rows with dimensions
+      - grid-gap: Space between grid items
+        - Syntax: [grid-row-gap] [grid-column-gap]
+        - grid-column-gap: Space between grid columns
+        grid-row-gap: Space between grid rows
+-->
