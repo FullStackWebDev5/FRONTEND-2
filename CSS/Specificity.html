@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Specificity</title>
+  <style>
+    /* Universal Selector */
+    * {
+      color: red;
+    }
+
+    /* Element Selector */
+    p {
+      color: blue;
+    }
+
+    /* Class Selector */
+    .custom-para {
+      color: green;
+    }
+
+    /* ID Selector */
+    #unique-para {
+      color: violet;
+    }
+
+    /* ------------------ */
+    /* .custom-para-2 {
+      color: pink;
+    } */
+  </style>
+</head>
+<body>
+  <h1>CSS Specificity</h1>
+  <p class="custom-para custom-para-2" id="unique-para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati doloremque iste earum praesentium explicabo veritatis aliquam, doloribus non enim expedita commodi repellendus, ea nobis sunt, provident voluptate sit nam ducimus?</p>
+</body>
+</html>
+
+<!--
+  # Specificity
+    - Priority of a particular style over another
+
+    - Pritory (top to bottom)
+      - Inline style - Highest
+      - ID Selector (#id)
+      - Class Selector (.class)
+      - Element Selector (h1, p, div, etc.)
+      - Universal selector (*) - Lowest
+
+    - Additional notes:
+      - If two selectors are of same priority, the second selector will overrite styles of the first selector
+      - !important: This keyword besides a particular style value to make that style of highest priority
+        - Don't misuse this keyword
+-->

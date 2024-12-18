@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Additional Properties</title>
+  <style>
+    #img-1 {
+      width: 600px;
+    }
+
+    #box-1 {
+      background-color: lightseagreen;
+      position: absolute;
+      top: 15px;
+      left: 175px;
+      width: 250px;
+      height: 75px;
+      z-index: 1;
+    }
+
+    #heading-1 {
+      color: white;
+      width: max-content;
+      padding: 10px;
+      position: absolute;
+      top: 0;
+      left: 175px;
+      z-index: 2;
+    }
+
+    #overflow-id {
+      border: 1px solid black;
+      width: 400px;
+      height: 300px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading-1">Beautiful Forest!</h1>
+  <img id="img-1" src="https://marketplace.canva.com/EAGDMVLSqu8/1/0/1600w/canva-green-nature-aesthetic-quotes-desktop-wallpaper-zd64ZbHmEDc.jpg">
+  <div id="box-1"></div>
+
+  <hr>
+  <div id="overflow-id">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint aut qui minima tempore debitis dignissimos, vero aspernatur quo ipsa voluptate voluptatem et unde reiciendis odio voluptatum! Exercitationem sunt vitae est alias facere eligendi nisi, voluptate nostrum, voluptas repudiandae sequi! Aliquid dolore repudiandae debitis. Molestias dolorum consectetur mollitia dolor, aspernatur praesentium error amet? Provident magnam obcaecati repellat quia, totam assumenda tenetur blanditiis, nam reprehenderit officiis impedit cum, in accusantium exercitationem quam nulla delectus dicta cupiditate iusto quibusdam minima? Ad ratione blanditiis repudiandae perspiciatis beatae optio dolores odit in suscipit ipsa ex quis necessitatibus molestiae vel enim porro, nobis officia at quisquam, fuga libero reiciendis quia aspernatur doloremque. Nobis illum voluptatum cumque totam dolor culpa voluptate, nisi ex tempora beatae iusto corrupti, ducimus distinctio aliquam obcaecati veniam soluta. Placeat, consequuntur ducimus blanditiis suscipit commodi pariatur, esse quos ab ea nesciunt, nihil quis omnis explicabo quo tenetur in et necessitatibus optio! Commodi id error recusandae nostrum quibusdam magni nihil in voluptatibus earum ipsum blanditiis neque praesentium, iste odit exercitationem placeat! Ratione deleniti officiis fugiat perferendis! Doloremque numquam fugit consequatur ut a! Minima voluptas atque asperiores similique! Ipsa repellendus mollitia neque tempore hic consectetur odit blanditiis commodi sequi ullam aliquam atque dolores iste aut cumque, ea dolor, culpa explicabo corrupti porro? Delectus, quia inventore? Praesentium, a similique. Neque, similique quisquam. Quam odio, iste quos maxime asperiores facilis! Voluptas quae alias vel beatae voluptatem veniam exercitationem necessitatibus rem modi explicabo rerum magni facilis deleniti quo illo, architecto maxime reprehenderit, at nam ducimus quibusdam? Consectetur hic doloremque quae inventore itaque, molestiae a possimus eius. Aliquid sit alias odit in quod ab vel a, autem, repellendus eligendi, voluptas distinctio at expedita provident vitae dicta tenetur doloribus molestiae tempora quam eum dolorum! Molestiae, vero. Accusantium, veritatis eveniet minima suscipit quas ullam porro corrupti, unde debitis, nostrum nulla veniam!</p>
+  </div>
+</body>
+</html>
+
+<!--
+  # Additional Properties:
+    - z-index: Order in which element will be stacked
+      - 0 (default)
+      - Increment values greater tham 0: The element will be brought one level above in that order
+    - overflow: Control how the content overflows from the element
+      - hidden: Overflowed content will be hidden
+      - scroll: Overflowed content be visible on scroll
+      - visible (default)
+      - Related properties:
+        - overflow-x: Across x axis
+        - overflow-y: Across y axis
+-->
