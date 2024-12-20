@@ -1,0 +1,44 @@
+# Git: Version control tool
+  - Github: A cloud for uploading project tracked using Git
+    - Alternatives
+      - Gitlab
+      - Bitbucket
+
+  - Keywords:
+    - repository: Project folder
+      - local repository: Local project folder
+      - remote repository: Project folder on Github
+    - stage: Prepare files to be commited
+    - commit: Saving changes
+    - push: Upload
+    - pull: Download
+
+  - Steps to upload a project on Github
+    - Github
+      - Create a new repository
+        - name: Name of the project
+        - description: Description of the project
+        - private/public: Default is public
+    - Local
+      - First time
+        - git init: Initialize a git repository
+        - git add .: Stage all the files
+          - git add fileName1.html: Stage specific file
+        - git commit -m "Added new feature": Commit changes
+        - git remote add origin <link to remote origin>: Establish a connection between local and remote repository
+        - git push -u origin master: Push commited changes to remote repository
+      - Second time and onwards
+        - git add .: Stage all the files
+          - git add fileName1.html: Stage specific file
+        - git commit -m "Added new feature": Commit changes
+        - git push: Push commited changes to remote repository
+
+    - Steps to download a project from Github
+      - First time
+        - git clone <link to remote origin>
+      - Second time and onwards
+        - git pull
+
+  - Resources:
+   - Download: https://git-scm.com/downloads
+   - Github: https://github.com/
