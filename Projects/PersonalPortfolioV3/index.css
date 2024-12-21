@@ -1,0 +1,205 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #002349;
+  font-family: "Lora", serif;
+  margin: 0;
+}
+
+h3 {
+  text-align: center;
+}
+
+
+/* ---- GENERIC ---- */
+.main-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.li-section {
+  background-image: linear-gradient(#a8c9ee, #E9F1FA);
+  border-radius: 6px;
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.secondary-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.secondary-li {
+  background-image: linear-gradient(to right, #a8c9ee, #E9F1FA);
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.secondary-li span {
+  margin: 0 5px;
+}
+
+/* ---- NAVBAR ---- */
+#navbar {
+  background-color: #002349;
+}
+
+#navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#navbar ul li {
+  padding: 10px 0;
+}
+
+#navbar ul li a {
+  font-size: 24px;
+  text-decoration: none;
+  color: #E9F1FA;
+}
+
+#navbar ul li a:hover {
+  text-shadow: 2px 2px 5px white;
+}
+
+/* ---- CONTAINER ---- */
+#container {
+  margin: 0 8px;
+}
+
+#container .portfolio-sections {
+  background-color: #E9F1FA;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* ---- HEADER ---- */
+#header {
+  text-align: center;
+}
+
+#header img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* ---- CONTACT ---- */
+#contact ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#contact ul li a {
+  color: #002349;
+}
+
+#contact .contact-sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-evenly;
+  text-align: left;
+  margin: 0 10px;
+}
+
+#contact .contact-sub li {
+  margin: 5px 10px;
+}
+
+#contact .contact-sub .contact-li-1 {
+  text-align: right;
+}
+
+/* ---- ACHIEVEMENTS ---- */
+.achievements {
+  flex-direction: column;
+}
+
+.achievements .li-section {
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+/* ------ MEDIA QUERIES: MOBILE DEVICES ------ */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px; /* 1rem = 14px */
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 0.8rem 0;
+  }
+
+  /* ---- GENERIC ---- */
+  .main-ul {
+    flex-direction: column;
+  }
+
+  .li-section {
+    margin: 10px 0;
+  }
+
+  .secondary-ul {
+    flex-direction: column;
+  }
+
+  .secondary-li {
+    margin: 0.8rem 0;
+  }
+
+  /* ---- NAVBAR ---- */
+  #navbar ul {
+    flex-direction: column;
+  }  
+
+  #navbar ul li a {
+    font-size: 1.3rem;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 5px
+  }  
+
+  /* ---- HEADER ---- */
+  #header h1 {
+    font-size: 2.5rem;
+    margin: 0.8rem 0;
+  }
+
+  #header p {
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
+  }
+
+  /* ---- CONTACT ---- */
+  #contact .contact-sub {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contact .contact-sub li {
+    text-align: center;
+  }
+
+  #contact .contact-sub li.contact-li-1 {
+    text-align: center;
+  }
+}
