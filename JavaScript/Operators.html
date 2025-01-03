@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operators</title>
+</head>
+<body>
+  <h1>Operators</h1>
+  <script>
+    /*
+      # Operators: Perform logical operations
+        - Arithmetic Operators ***
+          - Addition (+)
+          - Subtraction (-)
+          - Multiplication (*)
+          - Divide (/)
+          - Modulus (%) - Remainder
+          - Increment (++): +1
+            - Pre increment (++x): Increment, then access
+            - Post increment (x++): Access, then increment
+          - Decrement (--): -1
+            - Pre decrement (--x): Decrement, then access
+            - Post decrement (x--): Access, then decrement
+          - Exponential (**)
+        - Assignment Operators
+          - Assignment (=)
+          - Addition Assignment (+=)
+          - Subtraction Assignment (-=)
+          - Multiplication Assignment (*=)
+          - Division Assignment (/=)
+          - Modulus Assignment (%=)
+          - Exponential Assignment (**=)
+        - Comparison Operators *** (Return boolean value: true/false)
+          - Equality Operator (==): Equals to (Value, not type)
+          - Inequality Operator (!=): Not equals to (Value, not type)
+          - Greater Than (>)
+          - Less Than (<)
+          - Greater Than or Equal To (>=)
+          - Less Than or Equal To (<=)
+          - Identity Operator (===): Equal value and type
+          - Non-Identity Operator (!==): Not equal value or type
+        - Logical Operators *** (Return boolean value: true/false)
+          - Logical AND operator (&&): ALL TRUE -> TRUE
+            - Simple rule: 
+              T & T: T
+              T & F: F
+              F & T: F
+              F & F: F
+          - Logical OR operator (||): ONE TRUE -> TRUE
+            - Simple rule: 
+              T || T: T
+              T || F: T
+              F || T: T
+              F || F: F
+          - Logical NOT operator (!): TRUE -> FALSE, FALSE -> TRUE
+            - Simple rule:
+              !T: F
+              !F: T
+        - Type operator (typeof): Return data type of the value
+
+    */
+
+    // Arithmetic operators ---------------------
+    // var x = 10
+    // var y = 20
+    // console.log(x + y)
+    // console.log(x - y)
+    // console.log(x * y)
+    // console.log(x / y)
+    // console.log(75 % 9)
+
+    // var x = 10
+    // // ++x
+    // x++
+    // console.log(x)
+
+    // var x = 10
+    // console.log(x++)
+    // console.log(x)
+
+    // var y = 100
+    // console.log(y--)
+
+    // 2^3
+    // console.log(2 ** 3)
+
+    // 3^2
+    // console.log(3 ** 2)
+
+    // Assignment operators ---------------------
+    // var x = 10
+    // var y = x
+    // console.log(y)
+
+    // var x = 10
+    // x += 2 // x = x + 2
+    // console.log(x)
+
+    // var y = 20
+    // y -= 5 // y = y - 5
+    // console.log(y)
+
+    // var z = 30
+    // z *= 3 // z = z * 3
+    // console.log(z)
+    
+    // var a = 40
+    // a /= 4 // a = a / 4
+    // console.log(a)
+
+    // var b = 60
+    // b %= 5 // b = b % 5
+    // console.log(b)
+
+    // var c = 5
+    // c **= 2 // c = c ** 2
+    // console.log(c)
+
+    // Comparison operators ---------------------
+    // var x = 10
+    // var y = 20
+    // var z = 10
+    // console.log(x == y)
+    // console.log(x == z)
+    // console.log(y == 20)
+
+    // var x = 10
+    // var y = 20
+    // var z = 10
+    // console.log(x != y)
+    // console.log(x != z)
+    // console.log(y != 20)
+
+    // var x = 10
+    // var y = 20
+    // var z = 10
+    // console.log(x < y)
+    // console.log(x <= y)
+    // console.log(x <= z)
+
+    // var x = 10
+    // var y = 10
+    // var z = '10'
+    // console.log(x == y)
+    // console.log(x === y)
+    // console.log(x == z) // true
+    // console.log(x === z) // false
+
+    // Logical operators ---------------------
+    // var x = 10
+    // var y = 20
+    // var z = 30
+    // console.log(z > x && z > y)
+    // console.log(z > x || z > y)
+
+    // console.log(!true)
+    // console.log(!false)
+
+    // Type operator ---------------------
+    // var x = 10
+    // var y = '10'
+    // var z = true
+    // var a = undefined
+    // var b = null
+    // var c = 20
+    // console.log(typeof x)
+    // console.log(typeof y)
+    // console.log(typeof z)
+    // console.log(typeof a)
+    // console.log(typeof b)
+  </script>
+</body>
+</html>
+
+<!--
+  # Future:
+    - Ternary Operators (Conditions)
+    - typeof null = object
+-->
