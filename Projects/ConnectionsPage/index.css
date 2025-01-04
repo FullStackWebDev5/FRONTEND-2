@@ -1,0 +1,68 @@
+.custom-card {
+  flex-direction: row;
+  width: 30rem;
+  margin: auto;
+}
+
+.custom-card .card-img-top {
+  width: 200px;
+  border-radius: 5px 0 0 5px
+}
+
+.custom-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.custom-card .card-body .card-text {
+  color: gray;
+}
+
+.custom-card .card-body .mutual-friends img {
+  width: 25px;
+  border-radius: 50%;
+  margin-left: -5px;
+}
+
+.custom-card .card-body .mutual-friends img:first-child {
+  margin-left: 0;
+}
+
+.custom-card .card-body .mutual-friends span {
+  width: 25px;
+  font-size: 10px;
+  background-color: lightgray;
+  border-radius: 50%;
+  padding-top: 5px;
+  margin-left: -5px;
+  text-align: center;
+}
+
+.custom-card .card-body .invite-time {
+  position: absolute;
+  right: 16px;
+}
+
+.custom-list-group a {
+  color: #212529;
+  text-decoration: none;;
+}
+
+.custom-list-group a.active {
+  color: white;
+}
+
+@media screen and (max-width: 576px) {
+  .custom-card {
+    width: 100%;
+  }
+
+  .custom-card .card-title {
+    white-space: nowrap;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
