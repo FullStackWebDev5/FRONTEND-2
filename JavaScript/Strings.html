@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strings</title>
+</head>
+<body>
+  <script>
+    /*
+      # Strings
+        - '', "", ``
+        - Escape character (\)
+        - Next line character (\n)
+        - Tab space character (\t)
+
+        - Access a specific character in a string using index
+          - For a string of length 'n', index range: 0 -> n-1
+          - Index = Position - 1
+          - Syntax: str1[index]
+        
+        - '+' operator works as a concatenation operator
+          - String + String -> String
+          - String + Number -> String
+          - Number + String -> String
+          - Number + Number -> Number
+
+        - Properties
+          - length: Total number of characters in the string
+        - Methods
+          - toUpperCase(): Return the string in upper case
+          - toLowerCase(): Return the string in lower case
+          - indexOf(): Returns the index of the first occurence of the substring in the string, else returns -1
+            - lastIndexOf(): Returns the index of the last occurence of the substring in the string, else returns -1
+          - includes(substring): Returns true if a substring exists in the string else returns false
+          - concat(): Concatenate two or more strings
+            - Alternative: + operator
+          - charAt(index): Return the character at the specified index
+            - Alternative: str1[index]
+          - charCodeAt(index): Return the character code at the specified index (ASCII code)
+          - slice(startIndex, endIndex) *: Returns a substring (Ensure startIndex > endIndex)
+           - startIndex, endIndex: startIndex to endIndex-1
+           - startIndex: startIndex to the end of the string
+           - No arguments: Complete string will be returned
+           - Negative index: Index will calcuated from end of string
+           - Alternatives:
+            - substr(startIndex, subStringLength): subStringlength starting from startIndex
+            - substring(startIndex, endIndex): Similar to slice
+              - negative index will be treated as 0
+              - startIndex > endIndex, index will be swapped
+          - replace(substring, replaceValue): Returns a string, where the first occurrence of the specified substring is replaced with the replacement value
+            - replaceAll(substring, replaceValue): Returns a string, where all occurrences of the specified substring is replaced with the replacement value
+
+        - Additional notes:
+          - Access the last character of a string
+            - Last index: str.length - 1
+            - Syntax: str1[str1.length - 1]
+
+    */
+
+    // var str1 = "It's a beautiful picture"
+    // var str2 = 'He shouted - "Help me!"'
+    // var str3 = 'It\'s a beautiful picture'
+    // var str4 = "He shouted - \"Help me!\""
+    // console.log(str1)
+    // console.log(str2)
+    // console.log(str3)
+    // console.log(str4)
+
+    // var str1 = "Ingredient List:\n1. Onions\n2. Tomato\n3. Mushrooms\n4. Paneer\n5. Rice"
+    // var str1 = "Ingredient List:\n\t1. Onions\n\t2. Tomato\n\t3. Mushrooms\n\t4. Paneer\n\t5. Rice"
+    // console.log(str1)
+
+    // var student1 = 'Eli'
+    // console.log(student1[0])
+    // console.log(student1[1])
+    // console.log(student1[2])
+
+    // var firstName = 'Ajay'
+    // var lastName = 'Soyi'
+    // console.log(firstName + ' ' + lastName)
+    // console.log(1 + '1')
+
+    // var student1 = 'Kiran'
+    // console.log(student1.length)
+    // var student2 = 'Rahul RBK'
+    // console.log(student2.length)
+
+    // var student1 = 'Priyanka'
+    // console.log(student1)
+    // console.log(student1.toUpperCase())
+    // console.log(student1.toLowerCase())
+
+    // var str1 = 'Velagana DS Sankar'
+    // console.log(str1.includes('Sankar'))
+    // console.log(str1.includes('Velagana'))
+    // console.log(str1.includes(' DS '))
+    // console.log(str1.includes('dbshjsdb'))
+
+    // var firstName = 'Ajay'
+    // var lastName = 'Soyi'
+    // console.log(firstName.concat(' ', lastName))
+
+    // var student1 = 'Eli'
+    // console.log(student1.charAt(0))
+    // console.log(student1.charAt(2))
+
+    // var student1 = 'Eli'
+    // console.log(student1.charCodeAt(0))
+    // console.log(student1.charCodeAt(2))
+
+    // var student1 = 'Priyanka'
+    // console.log(student1.slice(2, 5))
+    // console.log(student1.slice(1, 3))
+    // console.log(student1.slice())
+    // console.log(student1.slice(1))
+    // console.log(student1.slice(2, -1)) // -1: Last index
+    // console.log(student1.slice(2, -3)) // -3: 3rd index from last
+
+    // var student1 = 'Ajay'
+    // console.log(student1.indexOf('j'))
+    // console.log(student1.indexOf('z'))
+    // console.log(student1.indexOf('ay'))
+
+    // var student1 = 'Priyanka'
+    // console.log(student1.indexOf('a'))
+    // console.log(student1.lastIndexOf('a'))
+    // console.log(student1.lastIndexOf('z'))
+
+    // var fruit = 'banana'
+    // console.log(fruit.replace('a', 'o'))
+    // console.log(fruit.replaceAll('a', 'o'))
+  </script>
+</body>
+</html>
