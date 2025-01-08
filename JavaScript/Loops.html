@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loops</title>
+</head>
+<body>
+  <script>
+    /*
+      # Loops: Repeated logic
+        - Pointers:
+          - In each iteration, condition will be checked
+          - Only if condition is true, iteration will be processed
+          - Else if condition is false, loop will break
+          - Any loop:
+            - Initialization
+            - Condition
+            - Increment/Decrement
+        - while loop *
+          - Syntax:
+            while(condition) {
+              // loop logic
+            }
+        - do while loop
+          - Syntax:
+            do {
+              // loop logic
+            } while(condition)
+            - Even if your condition is false, do while will still execute for atleast 1 iteration
+        - for loop
+          - Syntax:
+            for( initialization ; condition ; increment/decrement ) {
+              // loop logic
+            }
+
+        - Additional pointers:
+          - Infinite loop: A loop where condition will never become false
+    */
+
+    // var x = 1 // Initialization
+    // while (x < 10) { // Condition
+    //   console.log(x)
+    //   x++ // Increment/Decrement
+    // }
+
+    // Example 1: Printing first 10 numbers
+    // var x = 1
+    // while (x <= 10) {
+    //   console.log(x)
+    //   x++
+    // }
+
+    // Example 2: Printing first 10 numbers in reverse order
+    // var x = 10
+    // while (x >= 1) {
+    //   console.log(x)
+    //   x--
+    // }
+
+    // Example 3: Printing even numbers from 0 to 10
+    // var x = 0
+    // while (x <= 10) {
+    //   if (x % 2 === 0) {
+    //     console.log(x)
+    //   }
+    //   x++
+    // }
+
+    // Example 1 (Alt 1): Printing first 10 numbers
+    // var x = 1 // Initialization
+    // do {
+    //   console.log(x)
+    //   x++ // Increment/Decrement
+    // } while (x <= 10) // Condition
+
+    // Example 1 (Alt 2): Printing first 10 numbers
+    // var x = 1
+    // while (x <= 10) {
+    //   console.log(x)
+    //   x++
+    // }
+
+    // for(var x = 1; x <= 10; x++) {
+    //   console.log(x)
+    // }
+
+    // Example 4: Printing characters of a string
+    var student = 'Srinivas'
+    for(var i = 0; i < student.length; i++) {
+      console.log(student[i])
+    }
+  </script>
+</body>
+</html>

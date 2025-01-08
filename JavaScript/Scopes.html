@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scopes</title>
+</head>
+<body>
+  <script>
+    /*
+      # Scopes:
+        - Global: Variables declared in global scope, can be accessed in functions and blocks as well
+        - Function
+        - Block (let, const): Variables declared in block scope, cannot be accessed outside the block scope
+    */
+
+    // let x = 5
+    // console.log(x)
+
+    // if(10 > 5) {
+    //   console.log(x)
+    // }
+
+    // if(10 > 5) {
+    //   let x = 5
+    //   console.log(x)
+    // }
+
+    // console.log(x)
+    
+    // if(10 > 5) {
+    //   const x = 5
+    //   console.log(x)
+    // }
+
+    // console.log(x)
+
+    // if(10 > 5) {
+    //   var x = 5
+    //   console.log(x)
+    // }
+
+    // console.log(x)
+
+    /* --------------------------- */
+    // var x = 10
+    // if(100 < 200) {
+    //   var x = 50
+    //   console.log(x) // 50
+    // }
+    // console.log(x) // 50
+
+    // let x = 10
+    // if(100 < 200) {
+    //   let x = 50
+    //   console.log(x) // 50
+    // }
+    // console.log(x) // 10
+
+    // let x = 10
+    // if(100 < 200) {
+    //   let x = 50
+    //   if(50 < 100) {
+    //     let x = 100
+    //     console.log(x)
+    //   }
+    //   console.log(x)
+    // }
+    // console.log(x)
+  </script>
+</body>
+</html>
+
+<!--
+  # Future:
+    - Function scope (After learning Functions)
+-->
