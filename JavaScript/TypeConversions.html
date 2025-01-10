@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type Conversions</title>
+</head>
+<body>
+  <script>
+    /*
+      # Type Conversions: Converting a value from one data type to another
+        - Implicit type conversion (Automatic)
+          - a.k.a Type coercion
+          - Examples:
+            - String to Number
+              - Equality and Inequality operator
+              - Arithmetic operators excluding + operator
+            - Number to String
+              - Arithmetic operator: +
+            - Any data type to Boolean
+              - Value is directly placed in the condition placeholder (Truthy/Falsy values)
+
+        - Explicit type conversion (Manual)
+          - a.k.a Type casting
+          - Examples:
+            - Inbuilt-constructors
+              - Number(): Any data type to Number
+              - String(): Any data type to String
+              - Boolean(): Any data type to Boolean
+            - String to Number
+              - parseInt: Return number without decimal part
+              - parseFloat: Return number with decimal part
+    */
+
+    /* ------------------------------------------ */
+    /*
+      # NaN: Not a number
+        - Represents an invalid or unrepresentable number
+        - isNaN(): To check if a value is NaN or not
+        - typeof NaN: Number
+    */
+
+    /* ------------------------------------------ */
+    /*
+      # Truthy and Falsy values
+        - Truthy values: Any value that converts to true when evaluated in a Boolean context
+          - Number: Any non-zero number
+          - String: Any non-empty string
+        - Falsy values: Any value that converts to false when evaluated in a Boolean context
+          - Number: 0, NaN
+          - String: ''
+          - null
+          - undefined
+    */
+
+    // var x = 5
+    // var y = '5'
+    // console.log(x == y)
+    // console.log(x === y)
+
+    // var x = 5
+    // var y = '5'
+    // console.log(x + y)
+    // console.log(x - y)
+    // console.log(x * y)
+    // console.log(x / y)
+
+    // var x = '5'
+    // var y = Number(x)
+    // console.log(typeof x, typeof y)
+    
+    // NaN
+    // var x = 'Velagana'
+    // console.log(Number(x))
+
+    // var x = 'Srinivas'
+    // var y = 3
+    // console.log(x * y)
+
+    // console.log(Number(true)) // 1
+    // console.log(Number(false)) // 0
+    // console.log(Number(undefined)) // NaN
+    // console.log(Number(null)) //0
+
+    // var num1 = 6213978
+    // console.log(num1)
+    // console.log(String(num1))
+    // console.log(String(true))
+    // console.log(String(null))
+    // console.log(String(undefined))
+
+    // Truthy and Falsy
+    // let x = NaN
+    // if(x) {
+    //   console.log('Yes')
+    // } else {
+    //   console.log('No')
+    // }
+
+    // let x = '5'
+    // let y = '5.3478'
+    // console.log(parseInt(x))
+    // console.log(parseInt(y))
+    // console.log(parseFloat(y))
+
+    /* ---------------------------------------- */
+    // let num1 = 5
+    // let num2 = 10
+    // let quotient = num2 / num1
+    // console.log(quotient)
+
+    // let num1 = 10
+    // let num2 = 50
+    // let quotient = num2 / num1
+    // if(isNaN(quotient)) {
+    //   console.log('Invalid input provided')
+    // } else {
+    //   console.log(quotient)
+    // }
+
+    /* ---------------------------------------- */
+  </script>
+</body>
+</html>
