@@ -10,8 +10,8 @@
     /*
       # Scopes:
         - Global: Variables declared in global scope, can be accessed in functions and blocks as well
-        - Function
-        - Block (let, const): Variables declared in block scope, cannot be accessed outside the block scope
+        - Function (var): Variables declared in the function scope, cannot be accessed outside the function {}
+        - Block (let, const): Variables declared in block scope, cannot be accessed outside the block {}
     */
 
     // let x = 5
@@ -67,11 +67,45 @@
     //   console.log(x)
     // }
     // console.log(x)
+
+    // var x = 10
+    // let y = 20
+    // const z = 30
+
+    // console.log(x)
+    // console.log(y)
+    // console.log(z)
+
+    // function abc() {
+    //   console.log(x)
+    //   console.log(y)
+    //   console.log(z)
+
+    //   if(true) {
+    //     console.log(x)
+    //     console.log(y)
+    //     console.log(z)
+    //   }
+    // }
+
+    // if(true) {
+    //   let x = 5
+    //   const y = 10
+    //   console.log(x, y)
+    // }
+    // console.log(x, y)
+
+    // if(true) {
+    //   var x = 5
+    //   console.log(x)
+    // }
+    // console.log(x)
+
+    // function abc() {
+    //   var x = 5
+    //   console.log(x)
+    // }
+    // console.log(x)
   </script>
 </body>
 </html>
-
-<!--
-  # Future:
-    - Function scope (After learning Functions)
--->

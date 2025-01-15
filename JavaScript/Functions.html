@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+  <script>
+    /*
+      # Functions: 
+        - A set/block of code which is intended to perform a particular logical execution
+        - The function can be executed as many number of times as needed
+        - Advantages of functions:
+          - Avoid repeated code (redudancy)
+            - DRY (Don't Repeat Yourself) principle
+          - Modular code (keeps the code clean)
+        - For any function to be executed in JS, it needs two steps:
+          - Declaration
+          - Invokation (Calling the function)
+        - Syntax:
+          - Declaration
+            - Standard function
+              function name() {
+                // code
+              }
+            - Anonymous function:
+              - Function without a name
+              - Declared as a function expression
+              const name = function () {
+                // code
+              }
+          - Invokation
+            name()
+        - Parameters and arguments:
+          - Can be used to create dynamic functions (For different I/P, you get different O/P)
+          - Parameters: Function variables (Values expected by the function)
+          - Arguments: Actual values passed for the function parameters during invokation
+          - Syntax:
+            function name(par1) {
+              // code
+            }
+            name(arg1)
+        - 'return' keyword
+          - Terminate the function at that point
+          - Return a value to the point where the function was called
+    */
+
+    /* ------------------------ */
+    // // # Standard functions
+    // // Declaration
+    // function func1() {
+    //   console.log('This is function 1')
+    // }
+
+    // // Invokation
+    // func1()
+    // func1()
+    // func1()
+
+    // function fun1() {
+    //   console.log('WELCOME TO OUR WEBPAGE')
+    //   console.log('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo aperiam id corporis, praesentium vel ipsum laborum atque quis doloremque molestias!')
+    //   console.log('Do not forget to view the offers section')
+    // }
+
+    // fun1()
+    // fun1()
+    // fun1()
+    // fun1()
+    // fun1()
+
+    /* ------------------------ */
+    // // # Anonymous functions (Declared as a function expression)
+    // // Declaration
+    // const func1 = function () {
+    //   console.log('This is function 1')
+    // }
+
+    // // Invokation
+    // func1()
+    // func1()
+    // func1()
+
+    /* ------------------------ */
+    /*
+      # Example 1: Create a function to list the recipe steps for making a Pizza
+      - Step 1: Prepare the pizza base
+      - Step 2: Add pizza sauce
+      - Step 3: Add toppings'
+      - Step 4: Add cheeze
+      - Step 5: Bake the pizza
+    */
+    // function pizzaRecipe() {
+    //   console.log('Step 1: Prepare the pizza base')
+    //   console.log('Step 2: Add pizza sauce')
+    //   console.log('Step 3: Add toppings')
+    //   console.log('Step 4: Add cheeze')
+    //   console.log('Step 5: Bake the pizza')
+    // }
+
+    // pizzaRecipe()
+
+    /* ------------------------ */
+    // function printFavNumber(favNumber) { // Parameter
+    //   console.log('Your favourite number is ' + favNumber)
+    // }
+
+    // printFavNumber(5) // Argument
+    // printFavNumber(4637)
+
+    /*
+      # Example 2: Create a function which takes a number as an argument and checks whether the number is even or odd
+    */
+    // function checkEvenOdd(num1) {
+    //   if(num1 % 2 == 0) {
+    //     console.log('The given number is even')
+    //   } else {
+    //     console.log('The given number is odd')
+    //   }
+    // }
+
+    // checkEvenOdd(5)
+    // checkEvenOdd(4)
+
+    /*
+      # Example 3: Create a function which takes a number as an argument and checks whether the number is prime or not
+    */
+
+    // function checkPrime(num1) {
+    //   if(num1 < 2) {
+    //     console.log('Invalid input. Please provide a valid number')
+    //     return
+    //   }
+    //   let isPrime = true
+    //   for(let i = 2; i < num1; i++) {
+    //     if(num1 % i == 0) {
+    //       isPrime = false
+    //     }
+    //   }
+    //   if(isPrime) {
+    //     console.log('Provided number is prime')
+    //   } else {
+    //     console.log('Provided number is not prime')
+    //   }
+    // }
+
+    // checkPrime(5)
+    // checkPrime(6)
+    // checkPrime(7)
+    // checkPrime(1)
+
+    // function sum(num1, num2) {
+    //   const sum = num1 + num2
+    //   console.log('SUM:', sum)
+    // }
+
+    // sum(4, 5)
+    // sum(10, 25)
+
+    // function average(num1, num2) {
+    //   const sum = num1 + num2
+    //   const average = sum / 2
+    //   console.log('AVERAGE:', average)
+    // }
+
+    // average(384343, 27837492834)
+    // average(217648148943, 25)
+
+    /*
+      # Example 4: Create a function which takes 3 numbers as an argument and logs the largest number amongst the three
+    */
+
+    // Way 1
+    // function checkLargestNumber(num1, num2, num3) {
+    //   if(num1 > num2 && num1 > num3) {
+    //     console.log(num1)
+    //   } else if (num2 > num3) {
+    //     console.log(num2)
+    //   } else {
+    //     console.log(num3)
+    //   }
+    // }
+
+    // checkLargestNumber(8, 2, 99879)
+
+    // Way 2
+    // function checkLargestNumber(num1, num2, num3) {
+    //   const max = Math.max(num1, num2, num3)
+    //   console.log(max)
+    // }
+
+    // checkLargestNumber(8, 2, 99879)
+
+    /* ------------------------ */
+    // function add(num1, num2) {
+    //   let sum = num1 + num2
+    //   return sum
+    // }
+
+    // let x = add(38985, 4558)
+    // console.log(x)
+
+    // function checkGrade(totalMarks) {
+    //   if(totalMarks >= 86 && totalMarks <= 100) {
+    //     return 'Grade: A'
+    //   } else if (totalMarks >=71 && totalMarks <= 85) {
+    //     return 'Grade: B'
+    //   } else if (totalMarks >= 56 && totalMarks <= 70) {
+    //     return 'Grade: C'
+    //   } else if (totalMarks >= 41 && totalMarks <= 55) {
+    //     return 'Grade: D'
+    //   } else {
+    //     return 'Grade: F'
+    //   }
+    // }
+
+    // console.log(checkGrade(76))
+    // console.log(checkGrade(89))
+    // console.log(checkGrade(57))
+  </script>
+</body>
+</html>
+
+<!--
+  # Future
+    - Arrow function '=>' (In ES6 Syntax)
+    - Default parameters (In ES6 Syntax)
+-->
