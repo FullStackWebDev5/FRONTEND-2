@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <p id="test"></p>
+
+  <script>
+    /*
+      # Objects: Collections of key value pairs
+        - keys (string)
+        - values (any data type)
+        - Syntax:
+          let obj1 = {
+            key1: value1,
+            key2: value2,
+            key3: value3,
+            ...
+          }
+        
+        - Access values using keys
+          - Syntax 1: obj1['key1']
+          - Syntax 2: obj1.key1 **
+        
+        - Add/Update values using keys
+          - Syntax 1: obj1['key1'] = value1
+          - Syntax 2: obj1.key1 ** = value1
+        
+        - Delete a key
+          - 'delete' keyword
+          - Syntax: delete obj1.key1
+
+        - Properties and Methods:
+          - Properties: Keys holding any value other than function
+          - Methods: Keys hold functions as a value
+
+        - Inbuild object methods:
+          - Object.keys(): Returns an array of keys belonging to the object
+          - Object.values(): Returns an array of values belonging to the object
+          - Object.entries(): Returns an array of key value pairs belonging to the object (Multi-dimensional array)
+
+        - JSON: JavaScript Object Notation
+          - JSON.stringify(): Converts JavaScript object to a JSON string
+          - JSON.parse(): Converts a JSON string to a JavaScript object
+
+        - Additional notes:
+          - Arrays are special type of objects (numerical key/index)
+          - Iterate through objects (keys and values)
+            - 'for in' loop
+              - Syntax:
+                for(let key in obj) {
+                  // code
+                }
+            - for loop with Object.keys()
+              - Syntax:
+              const keys = Object.keys(obj)
+              for(let i = 0; i < keys.length; i++) {
+                let key = keys[i]
+                let value = obj[key]
+                // code
+              }
+          - [object Object]: Display an object in the string format without converting it to a string
+    */
+
+    /* ------------------------ */
+    // let ajayDetails = {
+    //   firstName: 'Ajay',
+    //   lastName: 'Soyi',
+    //   university: 'Delhi University',
+    //   city: 'Mumbai',
+    //   state: 'Maharashtra'
+    // }
+
+    // console.log(ajayDetails)
+    // console.log(typeof ajayDetails)
+
+    // console.log(ajayDetails['lastName'])
+    // console.log(ajayDetails['university'])
+    // console.log(ajayDetails['state'])
+
+    // console.log(ajayDetails.firstName)
+    // console.log(ajayDetails.city)
+    // console.log(ajayDetails.country) // undefined
+
+    /* ------------------------ */
+    // let ajayDetails = {
+    //   name: 'Ajay Soyi',
+    //   age: 25,
+    //   isGraduated: false,
+    //   carBrand: null,
+    //   hobbies: ['Singing', 'Coding', 'Cycling']
+    // }
+
+    // console.log('Name:', ajayDetails.name)
+    // console.log('Age:', ajayDetails.age)
+    // console.log('Graduated:', ajayDetails.isGraduated ? 'Yes': 'No')
+    // console.log('Car brand:', ajayDetails.carBrand ? ajayDetails.carBrand : 'N/A')
+    // console.log('Hobbies:', ajayDetails.hobbies.join(', '))
+
+    /* ------------------------ */
+    // let ajayDetails = {
+    //   name: 'Ajay Soyi',
+    //   age: 25,
+    //   isGraduated: false,
+    //   carBrand: null,
+    //   hobbies: ['Singing', 'Coding', 'Cycling']
+    // }
+
+    // ajayDetails['age'] = 28
+    // ajayDetails.age = 28
+    // ajayDetails.country = 'India'
+
+    // console.log(ajayDetails)
+
+    /* ------------------------ */
+    // Nested object: Object within object
+    // let ajayDetails = {
+    //   name: 'Ajay Soyi',
+    //   age: 25,
+    //   isGraduated: false,
+    //   carBrand: null,
+    //   hobbies: ['Singing', 'Coding', 'Cycling'],
+    //   address: {
+    //     city: 'Mumbai',
+    //     state: 'Maharashtra',
+    //     country: 'India'
+    //   }
+    // }
+
+    // console.log(ajayDetails.address.state)
+    // ajayDetails.address.city = 'Pune'
+    // ajayDetails.address.pinCode = 989898
+    // console.log(ajayDetails)
+
+    /* ------------------------ */
+    // let obj1 = {} // Empty object
+    // console.log(obj1)
+    // obj1.a = 5
+    // obj1.b = 10
+    // console.log(obj1)
+
+    /* ------------------------ */
+    // let ajayDetails = {
+    //   name: 'Ajay Soyi',
+    //   age: 26,
+    //   sayHi: function() {
+    //     console.log('Hi')
+    //   }
+    // }
+
+    // ajayDetails.sayHi()
+    // console.log(ajayDetails.sayHi)
+
+    // let ajayDetails = {
+    //   name: 'Ajay Soyi',
+    //   age: 26,
+    //   sayHi: function(friendName) {
+    //     console.log('Hi ' + friendName + '!')
+    //   }
+    // }
+
+    // ajayDetails.sayHi('Srinivas')
+    // ajayDetails.sayHi('Eli')
+    // ajayDetails.sayHi('Kiran')
+
+    /* ------------------------ */
+    // let obj1 = {
+    //   a: 5,
+    //   b: 10
+    // }
+
+    // delete obj1.a
+    // console.log(obj1)
+
+    /* ------------------------ */
+    // let obj1 = {
+    //   a: 5,
+    //   b: 10
+    // }
+
+    // for(let key in obj1) {
+    //   console.log(key, obj1[key])
+    // }
+
+    // const keys = Object.keys(obj1)
+    // for(let i = 0; i < keys.length; i++) {
+    //   let key = keys[i]
+    //   let value = obj1[key]
+    //   console.log(key, value)
+    // }
+
+    /* ------------------------ */
+    // let obj1 = {
+    //   a: 5,
+    //   b: 10
+    // }
+
+    // console.log(Object.keys(obj1))
+    // console.log(Object.values(obj1))
+    // console.log(Object.entries(obj1))
+
+    /* ------------------------ */
+    // let obj1 = {
+    //   a: 5,
+    //   b: 10
+    // }
+
+    // document.getElementById('test').innerText = JSON.stringify(obj1)
+
+    // let jsonString = '{"a":5,"b":10}'
+    // console.log(jsonString)
+    // let obj1 = JSON.parse(jsonString)
+    // console.log(obj1)
+
+    // let jsonString = '{"a":5,"b":10}'
+    // console.log(jsonString)
+    // let obj1 = JSON.parse(jsonString)
+    // console.log(obj1)
+  </script>
+</body>
+</html>

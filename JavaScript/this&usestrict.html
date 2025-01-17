@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>this Keyword</title>
+</head>
+<body>
+  <script>
+    /*
+      # this keyword: Refers to it's immediate parent object
+        - Within an object: Refers to the object
+        - Global scope: Window object
+    */
+
+    // let ajayDetails = {
+    //   firstName: 'Ajay',
+    //   lastName: 'Soyi',
+    //   age: 25,
+    //   isGraduated: true,
+    //   carBrand: null,
+    //   hobbies: ['Singing', 'Coding', 'Cycling'],
+    //   displayFullName: function() {
+    //     console.log(this.firstName + ' ' + this.lastName)
+    //   },
+    //   displayGraduationStatus: function() {
+    //     let fN = this.firstName
+    //     console.log(this.isGraduated ? fN + ' has graduated' : fN + ' has not graduated')
+    //   }
+    // }
+
+    // let srinivasDetails = {
+    //   firstName: 'Srinivas',
+    //   lastName: 'Gadadas',
+    //   age: 28,
+    //   isGraduated: false,
+    //   carBrand: null,
+    //   hobbies: ['Coding', 'Cycling'],
+    //   displayFullName: function() {
+    //     console.log(this.firstName + ' ' + this.lastName)
+    //   },
+    //   displayGraduationStatus: function() {
+    //     let fN = this.firstName
+    //     console.log(this.isGraduated ? fN + ' has graduated' : fN + ' has not graduated')
+    //   }
+    // }
+
+    // ajayDetails.displayFullName()
+    // ajayDetails.displayGraduationStatus()
+
+    // srinivasDetails.displayFullName()
+    // srinivasDetails.displayGraduationStatus()
+    
+    /* -------------------------------- */
+  
+    // console.log(this) // Window object
+    // console.log(window) // Window object
+
+    /*
+      # Additional notes:
+        - In-built objects:
+          - window: Window object 
+            - An object that stores details about the browser
+            - Properties and methods of the window object can be accessed without using the window keyword
+    */
+
+    /* -------------------------------- */
+    /*
+      # 'use strict': Impose strict rule in the JS code
+        - Examples:
+          - Accessing undeclared variables
+          - Duplicate parameters
+        - Pointer:
+          - 'this' keyword value will be undefined
+    */
+
+    // 'use strict'
+
+    // x = 5
+    // console.log(x) // Reference error
+
+    // function sum(num1, num2, num2) {
+    //   console.log(num1 + num2)
+    // }
+    // sum(4, 5, 10)
+
+    // function abc() {
+    //   console.log(this) // undefined
+    // }
+    // abc()
+  </script>
+</body>
+</html>
