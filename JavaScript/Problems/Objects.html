@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    /*
+      # Q1: You are provided with an object
+      {
+        firstName: 'Rahul',
+        lastName: 'RBK',
+        hobbies: ['Singing', 'Dancing', 'Swimming'],
+        address: {
+          city: 'San Francisco',
+          state: 'California',
+          country: 'USA'
+        },
+        isGraduate: true,
+        altLanguage: null,
+        displayIntroduction: function() {
+          // Your implementation here
+        }
+      }
+        - Create a method within this object which can display Rahul's introduction in user readable form.
+    */
+
+    const rahulDetails = {
+      firstName: 'Rahul',
+      lastName: 'RBK',
+      hobbies: ['Dancing', 'Swimming'],
+      address: {
+        city: 'San Francisco',
+        state: 'California',
+        country: 'USA'
+      },
+      isGraduate: true,
+      altLanguage: null,
+      displayIntroduction: function() {
+        console.log(`I'm ${this.firstName} ${this.lastName}. I like ${this.hobbies.slice(0, -1).join(', ')} and ${this.hobbies[this.hobbies.length - 1]}. I'm from ${this.address.city}, ${this.address.state}, ${this.address.country}. ${this.isGraduate ? "I'm a graduate" : "I'm not a graduate"}. ${this.altLanguage ? `My alternative language is ${this.altLanguage}` : "I don't have an alternative language"}.`)
+      }
+    }
+
+    rahulDetails.displayIntroduction()
+  </script>
+</body>
+</html>
