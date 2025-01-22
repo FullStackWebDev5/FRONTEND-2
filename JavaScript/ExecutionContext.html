@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Execution Context</title>
+</head>
+<body>
+  <script>
+    // var num1 = 10
+    // var num2 = 20
+    // console.log(num1 + num2)
+
+    /* -------------------- */
+    // let num1 = 10
+    // let num2 = 20
+
+    // console.log(num1 + num2)
+
+    // let num3 = 10
+    // let num4 = 20
+
+    // console.log(num3 + num4)
+
+    /* 
+      # Execution Context:
+        - An environment where JavaScript can be executed
+        - Provided by JavaScript Engine
+        - Functionalities:
+          - Memory allocation/ creation
+          - Code execution
+        - Types of execution contexts:
+          - Global execution context
+          - Function execution context(s)
+
+        - JavaScript execution happens in 2 phases:
+          - Memory allocation/ creation
+          - Code execution
+
+        - Example:
+          - Code:
+            var num1 = 10
+            var num2 = 20
+            console.log(num1 + num2)
+          - Phase 1 (Memory allocation)
+            - MEMORY: num1: undefined | num2: undefined
+          - Phase 2 (Code execution)
+            - MEMORY: num1: 10 | num2: 20
+
+        - Resources:
+          - JavaScript engine: https://en.wikipedia.org/wiki/JavaScript_engine
+          - Execution context: https://www.freecodecamp.org/news/how-javascript-works-behind-the-scene-javascript-execution-context/
+          - Simulate JS code execution:
+            - https://pythontutor.com/visualize.html#mode=edit
+    */
+  </script>
+</body>
+</html>
