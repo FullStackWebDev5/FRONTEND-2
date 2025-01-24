@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6 Syntaxes</title>
+</head>
+<body>
+  <script>
+    /*
+      # ES6 Syntaxes:
+        - ES6: ECMAScript 6 - JavaScript version which was introduced in the year 2015
+        - Provide 'syntactic sugar' (A syntax that is designed to make things easier to read or to express)
+        - Syntaxes/ Concepts:
+          1. let and const (Block scope)
+            - let: Declare variables
+            - const: Declare constants
+          2. Template literals/strings (`${x}`)
+            - It starts and ends with back ticks (`)
+            - Supports multi-line strings and expressions
+            - Variables can be used easily within template strings
+              - Syntax: ${variable}
+            - This eliminates the need to use alternate ' or " incase if these characters are used in the string value
+          3. Default parameters
+            - Default values can be provided to the function parameters. In the case if the argument is not provided, the default values are used
+          4. Arrow functions (() => {}) ***
+            - Syntax:
+              const func1 = () => {
+                // code
+              }
+            - Single line arrow function
+              - Syntax: const func1 = () => expression/returnValue
+              - Scenarios:
+                - Executes a single expression (Skip curly brackets)
+                - Returns a single expression/ value (Skip curly brackets + return keyword)
+          5. Object property shorthand ({ property1, property2 })
+            - Whenever the variable name and the object property name are the same, 'key: value' syntax can be replaced with just 'key'
+          6. Destructuring ({ property1 } = obj)
+            - Create variables having the same name as the property name and have the property value
+            - Syntax: const { property1 } = obj
+          7. Spread operator (...)
+            - Used with arrays and objects
+              - Syntax: ...arr // O/P: 1, 2, 3
+          8. Classes
+    */
+
+    /* ----------------------------- */
+    // # Template literals/strings
+    // let str1 = `She said - "Let's go there!"`
+
+    // let recipe = '1. Apply pizza sauce \n2. Add toppings \n3. Add cheese \n4. Bake in microwave'
+    // console.log(recipe)
+    // let recipe = `
+    //   1. Apply pizza sauce
+    //   2. Add toppings
+    //   3. Add cheese
+    //   4. Bake in microwave
+    // `
+    // console.log(recipe)
+
+    // const vaishnaviDetails = {
+    //   firstName: 'Vaishnavi',
+    //   lastName: 'K',
+    //   batch: 2,
+    //   address: {
+    //     city: 'San Francisco',
+    //     state: 'California',
+    //     country: 'USA'
+    //   },
+    // }
+    // console.log(vaishnaviDetails.firstName + ' ' + vaishnaviDetails.lastName + ' who is from batch no.', + vaishnaviDetails.batch + ' belongs from ' + vaishnaviDetails.address.city + ', ' + vaishnaviDetails.address.state + ', ' + vaishnaviDetails.address.country + '.')
+    // console.log(`${vaishnaviDetails.firstName} ${vaishnaviDetails.lastName} who is from batch no.${vaishnaviDetails.batch} belongs from ${vaishnaviDetails.address.city}, ${vaishnaviDetails.address.state}, ${vaishnaviDetails.address.country}`)
+
+    /* ----------------------------- */
+    // # Default parameters
+    // function sum(num1 = 0, num2 = 0) {
+    //   return num1 + num2
+    // }
+    // console.log(sum(5, 3))
+    // console.log(sum(5))
+    // console.log(sum())
+
+    // function sum(num1 = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0) {
+    //   return num1 + num2 + num3 + num4 + num5
+    // }
+    // console.log(sum(2, 4, 6, 8, 10))
+    // console.log(sum(2, 4, 6, 8))
+    // console.log(sum(2, 4, 6))
+    // console.log(sum(2, 4))
+    // console.log(sum(2))
+    // console.log(sum())
+
+    /* ----------------------------- */
+    // # Arrow function (=>)
+
+    // const func1 = () => {
+    //   console.log('Function 1')
+    // }
+    // func1()
+
+    // const sum = (num1, num2) => {
+    //   return num1 + num2
+    // }
+    // console.log(sum(2, 5))
+
+    // Single line expression
+    // const sum = (num1, num2) => {
+    //   console.log(num1 + num2)
+    // }
+    // const sum = (num1, num2) => console.log(num1 + num2)
+    // sum(5, 10)
+
+    // const sum = (num1, num2) => {
+    //   return num1 + num2
+    // }
+    // const sum = (num1, num2) => num1 + num2
+    // console.log(sum(5, 10))
+
+    // const sum = (n1, n2) => n1 + n2
+    // const diff = (n1, n2) => n1 - n2
+    // const multiply = (n1, n2) => n1 * n2
+    // const divide = (n1, n2) => n1 / n2
+    // console.log(sum(5, 10))
+    // console.log(diff(15, 5))
+    // console.log(multiply(3, 5))
+    // console.log(divide(10, 2))
+
+    /* ----------------------------- */
+    // # Object property shorthand
+    // const firstName = 'Ajay'
+    // const lastName = 'Soyi'
+    // const age =  28
+
+    // const ajayDetails = {
+    //   firstName: firstName,
+    //   lastName: lastName,
+    //   userAge: age
+    // }
+
+    // const ajayDetails = { firstName, lastName, userAge: age }
+    // console.log(ajayDetails)
+
+    /* ----------------------------- */
+    // # Destructuring
+    // const vaishnaviDetails = {
+    //   firstName: 'Vaishnavi',
+    //   lastName: 'K',
+    //   batch: 2,
+    //   address: {
+    //     city: 'San Francisco',
+    //     state: 'California',
+    //     country: 'USA'
+    //   },
+    // }
+
+    // console.log(vaishnaviDetails.lastName)
+
+    // let firstName = vaishnaviDetails.firstName
+    // let lastName = vaishnaviDetails.lastName
+    // console.log(`${firstName} ${lastName}`)
+
+    // let firstName = vaishnaviDetails.firstName
+    // let lastName = vaishnaviDetails.lastName
+    // let batch = vaishnaviDetails.batch
+    // let city = vaishnaviDetails.address.city
+    // let state = vaishnaviDetails.address.state
+    // let country = vaishnaviDetails.address.country
+
+    // let { firstName, lastName } = vaishnaviDetails
+    // console.log(`${firstName} ${lastName}`)
+
+    // Nested properties
+    // const {
+    //   firstName,
+    //   lastName,
+    //   batch,
+    //   address: {
+    //     city,
+    //     state,
+    //     country,
+    //   }
+    // } = vaishnaviDetails
+    // console.log(firstName, lastName, batch, city, state, country)
+
+    // console.log(`${firstName} ${lastName} who is from batch no.${batch} belongs from ${city}, ${state}, ${country}`)
+
+    /* ----------------------------- */
+    // # Spread operator (...)
+    // const arr1 = [1, 2, 3, 4, 5]
+    // console.log(arr1)
+    // console.log(...arr1)
+
+    // const arr1 = [1, 2, 3, 4, 5]
+    // const arr2 = [6, 7, 8, 9, 10]
+    // console.log(arr1.concat(arr2))
+    // const mergedArray = [...arr1, ...arr2]
+    // console.log(mergedArray)
+
+    // const obj1 = {
+    //   a: 5,
+    //   b: 10
+    // }
+    // Problem statement: Create obj2 which has all the propeties of obj1 along with a new property c: 15
+    // const obj2 = {
+    //   ...obj1,
+    //   c: 5
+    // }
+    // console.log(obj2)
+
+    // const address = {
+    //   city: 'San Francisco',
+    //   state: 'California',
+    //   country: 'USA'
+    // }
+    // const vaishnaviDetails = {
+    //   firstName: 'Vaishnavi',
+    //   lastName: 'K',
+    //   batch: 2,
+    //   address: {
+    //     ...address
+    //   },
+    // }
+    // console.log(vaishnaviDetails)
+
+    // const obj1 = {
+    //   a: 5,
+    //   b: 10
+    // }
+    // const obj2 = {
+    //   c: 15,
+    //   d: 20
+    // }
+    // const mergedObj = {
+    //   ...obj1,
+    //   ...obj2
+    // }
+    // console.log(mergedObj)
+
+    /* ----------------------------- */
+    /*  
+      # Shallow and Deep copy
+        - Shallow copy: Copy one non-primitive value to another variable only for the first level properties
+          - Using Spread operator (...)
+        - Deep copy: Copy one non-primitive value to another variable for all level properties
+          - Using JSON.parse(JSON.stringify(obj))
+        - Reference images:
+          - Javascript memory types: https://media.geeksforgeeks.org/wp-content/uploads/20230306152333/memory-management-in-js.png 
+    */
+   
+    // Primitive data types: Whenever one primitive data is assigned to another variable, complete value is assigned to the new variable
+    // let x = 5
+    // let y = x
+    // x = 10
+    // console.log(x, y) // 10, 5
+
+    // Non-primitve data types: Whenever one non-primitive data is assigned to another variable, instead of the complete value, only the reference is assigned. That means, the new variable also points to the same object
+    // let obj1 = { 
+    //   a: 5, 
+    //   b: 10 
+    // }
+    // let obj2 = obj1
+    // obj1.a = 20
+    // console.log(obj1, obj2)
+
+    // Shallow copy (first level properties)
+    // let obj1 = { 
+    //   a: 5, 
+    //   b: 10 
+    // }
+    // let obj2 = { ...obj1 }
+    // obj1.a = 20
+    // console.log(obj1, obj2)
+
+    // let obj1 = { 
+    //   a: 5, 
+    //   b: 10,
+    //   c: {
+    //     d: 15,
+    //     e: 20
+    //   }
+    // }
+    // let obj2 = { ...obj1 }
+    // obj1.c.d = 100
+    // console.log(obj1.c.d, obj2.c.d)
+
+    // Deep copy (All levels)
+    // let obj1 = { 
+    //   a: 5, 
+    //   b: 10,
+    //   c: {
+    //     d: 15,
+    //     e: 20
+    //   }
+    // }
+    // let obj2 = JSON.parse(JSON.stringify(obj1))
+    // obj1.c.d = 100
+    // console.log(obj1.c.d, obj2.c.d)
+  </script>
+</body>
+</html>
+
+<!--
+  # Future:
+    - ES6 Classes
+
+  # Explore:
+    - rest operator: Similar to spread operator
+-->
