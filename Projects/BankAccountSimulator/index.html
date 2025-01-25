@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian National Bank</title>
+  <link rel="icon" href="https://cdn.logojoy.com/wp-content/uploads/2018/05/30160348/1528.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30160348/1528.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        Indian National Bank
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Our products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Terms and conditions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Register for netbanking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-4 col-xs-12">
+        <!-- NETBANKING TABS -->
+        <div class="list-group netbanking-tabs" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Account summary</a>
+          <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Add money</a>
+          <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Transfer out</a>
+        </div>
+      </div>
+      <div class="col-md-8 col-xs-12">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active account-summary-tab-content" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+            <!-- 1. ACCOUNT SUMMARY TAB CONTENT -->
+            <div class="card mb-3 account-details" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="https://reqres.in/img/faces/5-image.jpg" class="img-fluid rounded-start w-100 account-holder-img" alt="account-holder-img">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <p class="card-text m-0">
+                      <div>Account No.: 4893030030903</div>
+                      <div>Account Name: Charles Morris</div>
+                    </p>
+                    <h5 class="card-title">
+                      <span>₹</span>
+                      <span id="available-balance">78264.76</span>
+                    </h5>
+                    <p class="card-text"><small class="text-body-secondary">Available balance</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Recent transactions
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="list-group" id="recent-transaction">
+                      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">UPI: Kiran Nyayapati</h5>
+                          <p class="lead m-0 text-danger">- ₹ 20,000.00</p class="lead">
+                        </div>
+                        <p class="mb-1">Transfer out</p>
+                        <small>4/16/2024, 10:18:59 AM</small>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">UPI: Shreya</h5>
+                          <p class="lead m-0 text-success">+ ₹ 12,000.00</p class="lead">
+                        </div>
+                        <p class="mb-1">Transfer in</p>
+                        <small>2/29/2024, 7:26:51 PM</small>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+            <!-- 2. ADD MONEY TAB CONTENT -->
+            <button type="button" class="btn btn-dark" onclick="addMoney()">Add money</button>
+          </div>
+          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+            <!-- 3. TRANSFER OUT TAB CONTENT -->
+            <button type="button" class="btn btn-dark" onclick="transferOut()">Transfer out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+</html>

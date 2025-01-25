@@ -1,0 +1,18 @@
+.account-summary-tab-content .card .card-title {
+  font-size: 1.75em;
+}
+
+@media screen and (max-width: 576px) {
+  .netbanking-tabs {
+    margin-bottom: 2em;
+  }
+
+  .account-details {
+    text-align: center;
+    padding-top: 1em;
+  }
+
+  .account-details .account-holder-img {
+    width: 100px !important;
+  }
+}
