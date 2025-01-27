@@ -32,27 +32,117 @@
     // add(40, 50)
 
     /* ------------ */
-    function fun1() {
-      fun2()
-      console.log('Function 1')
-    }
+    // function fun1() {
+    //   fun2()
+    //   console.log('Function 1')
+    // }
 
-    function fun2() {
-      fun3()
-      console.log('Function 2')
-    }
+    // function fun2() {
+    //   fun3()
+    //   console.log('Function 2')
+    // }
 
-    function fun3() {
-      console.log('Function 3')
-    }
+    // function fun3() {
+    //   console.log('Function 3')
+    // }
 
-    fun1()
+    // fun1()
+
+    /* --------------------------- */
+    /* 
+       # Lexical environment:
+        - 'Lexical': Physical placement of the code block
+        - Lexical scope: Scope of variable and functions based on where those are declared, not where they are called
+        - Lexical environment: Created during execution, stores variables and functions for each scope
+
+        - Rule about scopes:
+          - Outer declarations can be accessed by inner blocks, but inner declarations cannot be accessed outside the blocks
+    */
+
+    // let x = 5
+    // let y = 10
+    // console.log(x + y)
+
+    // function abc() {
+    //   let x = 5
+    //   let y = 10
+    // }
+    // console.log(x + y)
+
+    // let num1 = 100
+    // function add() {
+    //   let num2 = 200
+    //   console.log(num1 + num2) // num1, num2 are present in the lexical environment
+    // }
+
+    // let num1 = 100
+    // function fun1() {
+    //   let num2 = 200
+    //   function fun2() {
+    //     let num3 = 300
+    //     console.log(num1 + num2 + num3) // All 3 numbers are accessible due to lexical scope
+    //   }
+    //   fun2()
+    // }
+    // fun1()
+
+    /* --------------------------- */
+    /*
+      # Scope Chain: Used to resolve variables. If a variable is not found in the current scope, the JS checks in the parent scope, if not found, continues up until the global scope
+    */
+
+    // let num1 = 100
+    // function fun1() {
+    //   let num2 = 200
+    //   function fun2() {
+    //     let num3 = 300
+    //     console.log(num1 + num2 + num3)
+    //   }
+    //   fun2()
+    // }
+    // fun1()
+
+    // Scope chain of fun2: fun2 -> fun1 -> Global
+    // Scope chain of fun1: fun1 -> Global
+
+    /* --------------------------- */
+    /*
+      Questions: Predict the O/P
+    */
+    // function fun1() {
+    //   console.log('Function 1')
+    //   fun2()
+    // }
+    // function fun2() {
+    //   console.log('Function 2')
+    //   fun3()
+    // }
+    // function fun3() {
+    //   console.log('Function 3')
+    // }
+    // fun1()
+
+    // let num1 = 100
+    // function fun1() {
+    //   let num2 = 200
+    //   function fun2() {
+    //     let num1 = 500
+    //     let num2 = 400
+    //     let num3 = 300
+    //     console.log(num1 + num2 + num3)
+    //   }
+    //   fun2()
+    // }
+    // fun1()
   </script>
 </body>
 </html>
 
 <!--
   # Additional notes:
+    - Higher order functions (HOFs)
+      - A function which has a function within itself or which returns another function
+
     - Stack vs Queues:
       - Queue: FIFO (First In First Out)
         - Example: RAHUL (1) PRIYANKA (2) KIRAN (3)
@@ -73,4 +163,8 @@
     - JS code Simulation tools:
       - PythonTutor: https://pythontutor.com/javascript.html#mode=edit
       - JavaScript Visualizer: https://www.jsv9000.app/
+    - References:
+      - Scope chain:
+        - https://images.ctfassets.net/pzhspng2mvip/1d5LNFu1ftEWvcMipQd1GN/0e857b697ae5145af31467e30749586a/2-scope-chain.png
+        - https://www.learnsimpli.com/wp-content/uploads/2020/02/2-4.png
 -->
