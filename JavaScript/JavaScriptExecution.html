@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Execution Concepts</title>
+</head>
+<body>
+  <script>
+    /* 
+       # Call Stack: Handles execution contexts by pushing/popping function execution context onto/from the stack
+    */
+
+    // let firstName = 'Kiran'
+    // let lastName = 'Nyayapati'
+
+    // function add(num1, num2) {
+    //   let sum = num1 + num2
+    //   console.log(sum)
+    // }
+
+    // function sub(num1, num2) {
+    //   let diff = num1 - num2
+    //   console.log(diff)
+    // }
+
+    // let fullName = firstName + ' ' + lastName
+    // console.log(fullName)
+
+    // add(10, 20)
+    // sub(30, 20)
+    // add(40, 50)
+
+    /* ------------ */
+    function fun1() {
+      fun2()
+      console.log('Function 1')
+    }
+
+    function fun2() {
+      fun3()
+      console.log('Function 2')
+    }
+
+    function fun3() {
+      console.log('Function 3')
+    }
+
+    fun1()
+  </script>
+</body>
+</html>
+
+<!--
+  # Additional notes:
+    - Stack vs Queues:
+      - Queue: FIFO (First In First Out)
+        - Example: RAHUL (1) PRIYANKA (2) KIRAN (3)
+      - Stack: LIFO (Last In First Out)
+        - Example:
+          - T-Shirt (1)
+          - JEANS (2)
+          - SHIRT (3)
+        - Terms
+          - Push: Add data to stack
+          - Pop: Remove last data from stack
+    - Other data structures in programming languages:
+      - Stack
+      - Queue
+      - Tree
+      - Graph
+      - Heap
+    - JS code Simulation tools:
+      - PythonTutor: https://pythontutor.com/javascript.html#mode=edit
+      - JavaScript Visualizer: https://www.jsv9000.app/
+-->
