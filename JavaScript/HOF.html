@@ -94,6 +94,68 @@
     // closure.removeItems()
     // closure.addItems()
     // closure.printItems()
+
+    /* ------------------------ */
+    /*
+        # Callback: A function which takes another function as an argument to execute it later
+        - Syntax:
+          - Syntax 1:
+            function fun1() {
+              console.log('fun1')
+            }
+            fun2(fun1) // Callback Syntax
+          - Syntax 2:
+            fun2(function () {
+              console.log('fun1')
+            })
+    */
+
+    /* ------------ */
+    // function fun1() {
+    //   console.log('Function 1')
+    // }
+
+    // function fun2(callback) {
+    //   console.log('Function 2')
+    //   callback()
+    // }
+
+    // fun2(fun1)
+
+    /* ------------ */
+    // function fun2(callback) {
+    //   console.log('Function 2')
+    //   callback()
+    // }
+
+    // fun2(function () {
+    //   console.log('Function 1')
+    // })
+
+    /* ------------ */
+    // function acceptOrder(callback) {
+    //   console.log('ORDER RECEIVED. PREPARING ...')
+    //   callback()
+    // }
+
+    // acceptOrder(function () {
+    //   console.log('ORDER PREPARED. READY TO PICKUP')
+    // })
+
+    /* ------------ */
+    // function fun2(num1, num2, callback) {
+    //   console.log('Function 2')
+    //   callback(num1, num2)
+    // }
+
+    // fun2(5, 10, function (num1, num2) {
+    //   console.log(num1 + num2)
+    // })
   </script>
 </body>
 </html>
+
+<!--
+  # Future
+    - Callback (Async JS)
+-->
