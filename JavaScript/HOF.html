@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Higher Order Functions</title>
+</head>
+<body>
+  <script>
+    /*
+      # Higher order functions (HOFs)
+        - A function which
+          - Takes another function as an argument (Callbacks)
+          - Returns another function as its result (Closure)
+
+      # Closures: Inner function continues to have access to the outer scope declarations (it's lexical enviroment) even after the outer function has completed execution
+        - Closure = Function Scope + lexical enviroment
+    */
+
+    /* ------------ */
+    // const outer = function () {
+    //   console.log('OUTER')
+
+    //   const inner = function () {
+    //     console.log('INNER')
+    //   }
+    //   inner()
+    // }
+
+    // outer()
+
+    /* ------------ */
+    // const outer = function () {
+    //   console.log('OUTER')
+
+    //   const inner = function () {
+    //     console.log('INNER')
+    //   }
+
+    //   return inner
+    // }
+
+    // const abc = outer()
+    // abc()
+
+    /* ------------ */
+    // const outer = function () {
+    //   let outerVar = 5
+
+    //   const inner = function () {
+    //     console.log(outerVar)
+    //   }
+    //   return inner
+    // }
+
+    // const abc = outer()
+    // abc()
+
+    /* ------------ */
+    /*
+      Example which uses the concept of closures:
+      - Group of functions to work with Cart feature in E-Commerce website
+      - Using closure concept, we can achieve modularization, which is nothing but separting a group of code performing similar functionality together
+    */
+
+    // function handleCart() {
+    //   let cartItems = 0
+
+    //   function addItems() {
+    //     cartItems++
+    //   }
+
+    //   function removeItems() {
+    //     cartItems--
+    //   }
+
+    //   function printItems() {
+    //     console.log(cartItems)
+    //   }
+
+    //   return {
+    //     addItems,
+    //     removeItems,
+    //     printItems
+    //   }
+    // }
+
+    // const closure = handleCart()
+    // closure.addItems()
+    // closure.addItems()
+    // closure.addItems()
+    // closure.addItems()
+    // closure.removeItems()
+    // closure.removeItems()
+    // closure.addItems()
+    // closure.printItems()
+  </script>
+</body>
+</html>
