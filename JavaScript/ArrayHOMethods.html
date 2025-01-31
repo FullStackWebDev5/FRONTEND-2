@@ -245,6 +245,62 @@
     // SHORT VERSION
     // const outputArr = numbers.map(number => number % 2 == 0 ? 'EVEN' : 'ODD')
     // console.log(outputArr)
+
+    /* -------------------------------------- */
+    /*
+      4. find()
+          - Syntax:
+            arr.find((element, index) => {
+              return [condition]
+            })
+          - Iterate through the array and execute callback for each element
+          - Callback parameters:
+            - 1st parameter: Element
+            - 2nd parameter: Index
+          - Returns: The first element that matched the condition. If none of the elements matched the condition, it returns undefined.
+    */
+
+    // Example 1: Find the first student who has 5 characters in their name
+    // let students = ['Kiran', 'Ram', 'Shyam', 'Sundar', 'Rahul']
+    // let foundElement = students.find((student) => {
+    //   return student.length == 5
+    // })
+    // console.log(foundElement)
+
+    // Example 2: Find the first student who has 7 characters in their name
+    // let students = ['Kiran', 'Ram', 'Shyam', 'Sundar', 'Rahul']
+    // let foundElement = students.find((student) => {
+    //   return student.length == 7
+    // })
+    // console.log(foundElement)
+
+    /* -------------------------------------- */
+    /*
+      5. findIndex()
+          - Syntax:
+            arr.findIndex((element, index) => {
+              return [condition]
+            })
+          - Iterate through the array and execute callback for each element
+          - Callback parameters:
+            - 1st parameter: Element
+            - 2nd parameter: Index
+          - Returns: The index of the first element that matched the condition. If none of the elements matched the condition, it returns -1.
+    */
+
+    // Example 1: Find the first student index who has 5 characters in their name
+    // let students = ['Kiran', 'Ram', 'Shyam', 'Sundar', 'Rahul']
+    // let foundIndex = students.findIndex((student) => {
+    //   return student.length == 5
+    // })
+    // console.log(foundIndex)
+
+    // Example 2: Find the first student index who has 7 characters in their name
+    let students = ['Kiran', 'Ram', 'Shyam', 'Sundar', 'Rahul']
+    let foundIndex = students.findIndex((student) => {
+      return student.length == 7
+    })
+    console.log(foundIndex)
   </script>
 </body>
 </html>
