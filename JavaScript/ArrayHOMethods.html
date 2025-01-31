@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Higher Order Methods</title>
+</head>
+<body>
+  <script>
+    /*
+      # Array Higher Order Methods: Array methods which use callback functions
+        1. forEach() ***
+          - Syntax:
+            arr.forEach((element, index) => {
+              // Code for each element
+            })
+          - Iterate through the array and execute callback for each element
+          - Callback parameters:
+            - 1st parameter: Element
+            - 2nd parameter: Index
+          - Doesn't return anything (undefined)
+    */
+
+    // Example 1: Simple iteration 
+    // const arr = [1, 3, 5, 7, 9]
+    // arr.forEach((element, index) => {
+    //   console.log(element, index)
+    // })
+
+    // Example 2: Calculate sum of the elements
+    // const arr = [1, 3, 5, 7, 9]
+    // let sum = 0
+    // arr.forEach((element, index) => {
+    //   sum += element
+    // })
+    // console.log(sum)
+
+    // Example 3: Find the largest number in the array
+    // const arr = [23, 12, 78, 45, 13]
+    // let max = arr[0]
+    // arr.forEach((element, index) => {
+    //   if(element > max) {
+    //     max = element
+    //   }
+    // })
+    // console.log(max)
+
+    /* -------------------------------------- */
+    /*
+      2. filter() ***
+          - Syntax:
+            arr.filter((element, index) => {
+              return [condition]
+            })
+          - Iterate through the array and execute callback for each element
+          - Callback parameters:
+            - 1st parameter: Element
+            - 2nd parameter: Index
+          - Returns: A filtered array based on the condition provided. If the callback returns true for the element, the element is added to the filtered array, else the element is skipped
+          - Additional Pointers:
+            - If true is passed for all elements, the filtered array will consits of all elements
+            - If false is passed for all elements, the filtered array will be empty
+            - filteredArray.length <= originalArray.length
+    */
+
+    // Example 1: Filter odd numbers from an array
+    // let arr = [1, 2, 4, 6, 7, 8, 11]
+    // let filteredArr = arr.filter((element, index) => {
+    //   return element % 2 === 1
+    // })
+    // console.log(filteredArr)
+
+    // Example 2: Filter student names which has less than 5 characters
+    // let allStudents = ['Rahul', 'Vaishnavi', 'Gita', 'Kiran', 'Shashank', 'Ram']
+    // let filteredStudents = allStudents.filter((element, index) => {
+    //   return element.length < 5
+    // })
+    // console.log(filteredStudents)
+
+    // Example 3: Filter prime numbers from given set of numbers
+    // let numbers = [3, 5, 1, 10, 12, 17, 2] // Expected O/P: [3, 5, 17, 2]
+    // const primeNumbers = numbers.filter((element, index) => {
+    //   if(element <= 1) {
+    //     return false
+    //   }
+    //   let isPrime = true
+    //   for(let i = 2; i < element; i++) {
+    //     if(element % i == 0) {
+    //       isPrime = false
+    //     }
+    //   }
+    //   return isPrime
+    // })
+    // console.log(primeNumbers)
+
+    // Example 4: Filter those students who are more than 25 years old
+    // const students = [
+    //   {
+    //     name: 'Kiran',
+    //     age: 27,
+    //     hobbies: ['Swimming', 'Dancing']
+    //   },
+    //   {
+    //     name: 'Ajay',
+    //     age: 24,
+    //     hobbies: ['Dancing']
+    //   },
+    //   {
+    //     name: 'Rahul',
+    //     age: 23,
+    //     hobbies: ['Singing', 'Dancing', 'Reading novels']
+    //   }, 
+    //   {
+    //     name: 'Vaishnavi',
+    //     age: 26,
+    //     hobbies: ['Programming', 'Reading novels']
+    //   }
+    // ]
+
+    // const filteredStudents = students.filter((element, index) => {
+    //   return element.age > 25
+    // })
+    // console.log(filteredStudents)
+
+    // Example 5: Filter those students who are more than 25 years old and have more than 5 characters in their name
+    // const filteredStudents = students.filter((student, index) => {
+    //   return student.age > 25 && student.name.length > 5
+    // })
+    // console.log(filteredStudents)
+
+    // Example 6: Filter those students who have less than 3 hobbies
+    // const filteredStudents = students.filter((student, index) => {
+    //   return student.hobbies.length < 3
+    // })
+    // console.log(filteredStudents)
+
+    // Example 7: Filter those students who have 'Dancing' as one of their hobbies
+    // const filteredStudents = students.filter((student, index) => {
+    //   return student.hobbies.includes('Dancing')
+    // })
+    // console.log(filteredStudents)
+
+    /* -------------------------------------- */
+    /*
+      3. map() ***
+          - Syntax:
+            arr.map((element, index) => {
+              return [updatedElement]
+            })
+          - Iterate through the array and execute callback for each element
+          - Callback parameters:
+            - 1st parameter: Element
+            - 2nd parameter: Index
+          - Returns: An updated array based on the return values provided. In the new array, the element at the same index will be the returned value from the callback
+          - Additional Pointers:
+            - If nothing is returned from the callback, undefined will be stored in that specific index of the mapped array
+            - mappedArray.length = originalArray.length
+    */
+
+    // Example 1: Multiply each number by 2
+    // const numbers = [2, 5, 12, 3]
+    // const updatedNumbers = numbers.map((element, index) => {
+    //   return element * 2
+    // })
+    // console.log(updatedNumbers)
+
+    // Example 2: Return an array with square of provided numbers
+    // const numbers = [2, 5, 12, 3]
+    // const updatedNumbers = numbers.map((element, index) => {
+    //   return element * element
+    // })
+    // console.log(updatedNumbers)
+
+    // Example 3: Return an array with full name of users
+    // const users = [
+    //   {
+    //     firstName: 'John',
+    //     lastName: 'Doe'
+    //   },
+    //   {
+    //     firstName: 'Jane',
+    //     lastName: 'Smith'
+    //   },
+    //   {
+    //     firstName: 'Tom',
+    //     lastName: 'Johnson'
+    //   }
+    // ]
+    // const userFullNames = users.map((user) => {
+    //   return `${user.firstName} ${user.lastName}`
+    // })
+    // console.log(userFullNames)
+
+    // Example 4: Return an array with voting eligibility status. Expected O/P: ['INELIGIBLE', 'ELIGIBLE', 'ELIGIBLE']
+    // const users = [
+    //   {
+    //     firstName: 'John',
+    //     lastName: 'Doe',
+    //     age: 17
+    //   },
+    //   {
+    //     firstName: 'Jane',
+    //     lastName: 'Smith',
+    //     age: 18
+    //   },
+    //   {
+    //     firstName: 'Tom',
+    //     lastName: 'Johnson',
+    //     age: 19
+    //   }
+    // ]
+    // const userFullNames = users.map((user) => {
+    //   if(user.age >= 18) {
+    //     return 'ELIGIBLE'
+    //   } else {
+    //     return 'INELIGIBLE'
+    //   }
+    // })
+    // console.log(userFullNames)
+
+    // Example 5: Return an array with voting eligibility status and add it to a property with the name 'votingStatus'
+    // const userFullNames = users.map((user) => {
+    //   if(user.age >= 18) {
+    //     user.votingStatus = 'ELIGIBLE'
+    //   } else {
+    //     user.votingStatus = 'INELIGIBLE'
+    //   }
+    //   return user
+    // })
+    // console.log(userFullNames)
+
+    /* Example 6: Return an array with EVEN/ODD string values for given set of input array. 
+      I/P: [2, 5, 8, 10, 11] 
+      O/P: [EVEN, ODD, EVEN, EVEN, ODD]
+    */
+    // const numbers = [2, 5, 8, 10, 11]
+    //  const outputArr = numbers.map((number) => {
+    //   if(number % 2 == 0) {
+    //     return 'EVEN'
+    //   } else {
+    //     return 'ODD'
+    //   }
+    //  })
+
+    // SHORT VERSION
+    // const outputArr = numbers.map(number => number % 2 == 0 ? 'EVEN' : 'ODD')
+    // console.log(outputArr)
+  </script>
+</body>
+</html>
