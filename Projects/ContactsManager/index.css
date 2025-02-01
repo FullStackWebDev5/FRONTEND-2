@@ -1,0 +1,46 @@
+#current-user-img {
+  border-radius: 50%;
+}
+
+/* CUSTOM LIST SECTION */
+.custom-list-section {
+  border-right: 1px solid #ddd;
+}
+
+.custom-list-section .contact-user-img {
+  border-radius: 50%;
+  border: 3px solid #ddd;
+}
+
+.custom-list-section .list-group {
+  margin-top: 1em;
+}
+
+.custom-list-section .list-group-item {
+  cursor: pointer;
+}
+
+/* CUSTOM DETAIL SECTION */
+.custom-detail-section .contact-card {
+  align-items: center;
+  text-align: center;
+}
+
+.custom-detail-section .contact-card .custom-card-img{
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  text-align: center;
+  border: 5px solid #ddd;
+}
+
+@media screen and (max-width: 576px) {
+  .custom-list-section {
+    border-right: none;
+    order: 2;
+  }
+
+  .custom-detail-section {
+    order: 1;
+  }
+}
