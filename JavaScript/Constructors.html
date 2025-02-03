@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constructors</title>
+</head>
+<body>
+  <script>
+    /*
+      # Constructors:
+        - A special function which can be used to create objects with a similar structure
+        - A blueprint/schema for objects which will be created using it
+        - Syntax:
+          // Declaring a constructor
+          function Constructor1() {
+            this.property1 = value1
+            this.property2 = value2
+            ...
+          }
+
+          // Create objects using the constructor
+          const obj1 = new Constructor1()
+
+          - Naming convention: PascalCase
+          - Use 'this' keyword to define the properties and methods that will belong to the objects created using this constructor
+          - Use 'new' keyword to create a new object using the constructor
+    */
+
+    // Example 1: Student constructor to create similar student objects
+    // function Student(name, age, hasGraduated) {
+    //   this.name = name
+    //   this.age = age
+    //   this.hasGraduated = hasGraduated
+    // }
+
+    // const student1 = new Student('John', 28, true)
+    // console.log(student1)
+
+    // const student2 = new Student('Kiran', 25, false)
+    // console.log(student2)
+
+    // Example 2
+    // function Student(name, age, hasGraduated) {
+    //   this.name = name
+    //   this.age = age
+    //   this.hasGraduated = hasGraduated
+    //   this.displayIntro = function() {
+    //     console.log(`Hello, my name is ${this.name}. I am ${this.age} years old. I ${this.hasGraduated ? 'have': "haven't"} graduated.`)
+    //   }
+    //   this.checkVotingEligibility = function() {
+    //     return this.age >= 18 ? 'ELIGIBLE' : 'NOT ELIGIBLE'
+    //   }
+    // }
+
+    // const student1 = new Student('John', 28, true)
+    // student1.displayIntro()
+    // console.log(student1.checkVotingEligibility())
+
+    // const student2 = new Student('Kiran', 25, false)
+    // student2.displayIntro()
+    // console.log(student1.checkVotingEligibility())
+
+    // Example 3: Create a constructor for Person with the following properties (name, age, dateOfBirth, hobbies, address - city, state, country) and methods (getFullAddress, getHobbies)
+
+    // function Person(name, age, dob, hobbies, city, state, country) {
+    //   this.name = name
+    //   this.age = age
+    //   this.dateOfBirth = dob
+    //   this.hobbies = hobbies
+    //   this.address = {
+    //     city: city,
+    //     state: state,
+    //     country: country
+    //   },
+    //   this.getFullAddress = function() {
+    //     console.log(`Address: ${this.address.city}, ${this.address.state}, ${this.address.country}`)
+    //   }
+    //   this.getHobbies = function() {
+    //     console.log(`Hobbies: ${this.hobbies.slice(0, -1).join(', ')} and ${this.hobbies[this.hobbies.length - 1]}`)
+    //   }
+    // }
+
+    // const person1 = new Person('Shyam', 25, '10/12/1995', ['Singing', 'Dancing', 'Programming'], 'Pune', 'Maharashtra', 'India')
+
+    // console.log(person1)
+    // person1.getFullAddress()
+    // person1.getHobbies()
+
+    // const person2 = new Person('Shyam', 25, '10/12/1995', ['Singing', 'Dancing', 'Programming', 'Drawing'], 'Pune', 'Maharashtra', 'India')
+    // person2.getHobbies()
+
+    /*
+      # Inbuilt constructors
+        - Number
+        - String
+        - Boolean
+    */
+
+    // const num1 = new Number(5)
+    // console.log(num1)
+
+    // const str1 = new String('Test')
+    // console.log(str1)
+
+    // const bool1 = new Boolean(true)
+    // console.log(bool1)
+
+    // # valueOf(): Primitive value equivalent of non-primitive value
+    // const num1 = new Number(5)
+    // console.log(num1)
+    // console.log(num1.valueOf())
+
+    // const str1 = new String('Test')
+    // console.log(str1)
+    // console.log(str1.valueOf())
+
+    /* --------------------------------- */
+    /*
+      # Prototypes:
+        - A reference to another object that serves as a blueprint for properties and methods
+        - An entity from where all objects inherit additional properties and methods
+        
+        - To access prototype of an object
+          - __proto__
+          - Object.getPrototypeOf()
+
+        - Prototype chain:
+          - obj1 -> Object -> null
+          - arr1 -> Array -> Object -> null
+          - num1 -> Number -> Object -> null
+          - str1 -> String -> Object -> null
+          - bool1 -> Boolean -> Object -> null
+    */
+
+    // const obj1 = {
+    //   a: 5,
+    //   b: 10
+    // }
+    // console.log(obj1)
+    // console.log(obj1.__proto__)
+    // console.log(obj1.__proto__.__proto__)
+
+    // const arr = [1, 2, 3]
+    // console.log(arr)
+  </script>
+</body>
+</html>
