@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6 Classes</title>
+</head>
+<body>
+  <script>
+    /*
+      # ES6 Classes:
+        - Introduced in ES6
+        - Alternatives of Constructors
+        - A blueprint/schema for objects
+
+        - Syntax:
+          // Declaration:
+          class Class1 {
+            constructor(param1, param2) {
+              this.property1 = param1
+              this.property2 = param2
+            }
+          }
+          
+          // Create objects using the classes
+          const obj1 = new Class1
+
+          - Naming convention for the class name: PascalCase
+          - Default method: constructor
+            - Inside this method, property value assignment can be done using 'this' keyword
+            - Gets invoked automatically during object initialization (creation)
+          - An object can be created from the class using the 'new' keyword
+    */
+   /* ------------------------------------ */
+    // class Student {
+    //   constructor(name, age, hasGraduated) {
+    //     this.name = name
+    //     this.age = age
+    //     this.hasGraduated = hasGraduated
+    //   }
+
+    //   displayIntro() {
+    //     console.log(`Hello, my name is ${this.name}. I am ${this.age} years old. I ${this.hasGraduated ? 'have': "haven't"} graduated.`)
+    //   }
+
+    //   checkVotingEligibility () {
+    //     return this.age >= 18 ? 'ELIGIBLE' : 'NOT ELIGIBLE'
+    //   }
+    // }
+
+    // const student1 = new Student('John', 28, true)
+    // console.log(student1)
+    // student1.displayIntro()
+    // console.log(student1.checkVotingEligibility())
+
+    // Example: Create a class for Car (brand, model, color, price, isSUV). It should have one method to print all these details
+
+    // class Car {
+    //   constructor(brand, model, color, price, isSUV) {
+    //     this.brand = brand
+    //     this.model = model
+    //     this.color = color
+    //     this.price = price
+    //     this.isSUV = isSUV
+    //   }
+
+    //   printDetails() {
+    //     console.log(`Brand: ${this.brand}, Model: ${this.model}, Color: ${this.color}, Price: ${this.price}, SUV: ${this.isSUV}`)
+    //   }
+    // }
+
+    // const car1 = new Car('Toyota', 'Camry', 'Blue', 25000, false)
+    // car1.printDetails()
+
+    /* ------------------------------------ */
+    /*
+      # Getter and Setter Methods
+        - Getter: 
+          - Special method which returns one or more property values
+          - Never accepts a parameter
+          - Syntax:
+            - Declaring: 
+              get method1 () {
+                return ...
+              }
+            - Accessing: No () required while calling
+              obj1.method1
+        - Setter:
+          - Special method whic creates/updates one or more property values
+          - Accepts a single parameter one
+          - Syntax:
+            - Declaring:
+              set method1 (val) {
+                this.property1 = val
+              }
+            - Accessing: No () required while calling, Assign the value/argument to the setter method
+    */
+
+    class Student {
+      constructor(firstName, lastName, age, hasGraduated) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.age = age
+        this.hasGraduated = hasGraduated
+      }
+
+      get fullName() {
+        return `${this.firstName} ${this.lastName}`
+      }
+
+      set updateAge(newValue) {
+        this.age = newValue
+      }
+
+      // getName() {
+      //   return this.name
+      // }
+
+      // setAge(newAge) {
+      //   this.age = newAge
+      // }
+      
+    }
+
+    // const student1 = new Student('John', 28, true)
+    // console.log(student1.getName())
+    // student1.setAge(30)
+    // console.log(student1.age)
+
+    // const student2 = new Student('John', 'Doe', 28, true)
+    // console.log(student2)
+    // console.log(student2.fullName)
+    // student2.updateAge = 35
+    // console.log(student2.age)
+  </script>
+</body>
+</html>
