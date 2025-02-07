@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+    #box-1 {
+      background-color: red;
+      width: 25em;
+      height: 25em;
+    }
+
+    .highlight {
+      background-color: yellow;
+      width: max-content;
+    }
+  </style>
+</head>
+<body>
+  <!-- <h1>Animals</h1>
+  <div>
+    <h2 class="random">Wild Animals</h2>
+    <ul>
+      <li class="wild">Lions</li>
+      <li id="animal-tiger" class="wild">Tigers</li>
+      <li class="wild random">Elephants</li>
+    </ul>
+  </div>
+  <div class="random">
+    <h2>Domestic Animals</h2>
+    <ul class="random">
+      <li>Cats</li>
+      <li>Dogs</li>
+      <li>Parrots</li>
+    </ul>
+  </div>
+
+  <form>
+    <input type="text" placeholder="Enter your name" id="fullname" value="Prashant">
+    <button type="button" onclick="access()">Access</button>
+
+    <input type="password" placeholder="Enter your password" id="password">
+    <button type="button" onclick="showPassword()"><i class="fa-solid fa-eye"></i></button>
+  </form>
+
+  <br>
+  <img src="https://res.cloudinary.com/highereducation/images/f_auto,q_auto/v1694627620/CyberDegrees.org/typical-day-of-security-software-developer/typical-day-of-security-software-developer.jpg?_i=AA" alt='developer' width="250" height="150" id='developer-img'>
+  <br>
+  <button onclick="updateHeightWidth()">Update height and width</button>
+  <button onclick="updateSrc()">Update source</button> -->
+
+  <!-- <div id="box-1"></div>
+  <br>
+  <button onclick="updateStyles()">Update style</button>
+  <button onclick="generateRandomColor()">Generate random color</button> -->
+
+  <!-- <div id="container"></div>
+  <button onclick="generateHeading()">Manipulate DOM</button> -->
+  
+  <!-- <ul id="hobbies">
+    <li>Swimming</li>
+    <li id="reading-novels">Reading Novels</li>
+  </ul>
+  <button onclick="addHobby()">Add hobby</button>
+  <button onclick="addHobbies()">Add hobbies</button>
+  <button onclick="removeReadingNovels()">Remove reading novels</button> -->
+  
+  <ul>
+    <li id="milk" class="highlight">Milk: 2Ltrs</li>
+    <li id="eggs">Eggs: 2 dozens</li>
+    <li id="bread">Bread: 1 loaf</li>
+  </ul>
+
+  <button onclick="highlightBread()">Highlight bread</button>
+  <button onclick="removeHighlightBread()">Remove highlight for bread</button>
+
+  <script>
+    /*
+      # DOM (Document Object Model)
+        - Refers to the object representation of the HTML 'document tree'
+        - Reserved keyword: document
+        - Nodes: Represents individual HTML elements in the DOM tree
+        - Reference Image:
+          - https://info340.github.io/img/html/dom-tree.jpg
+          - https://www.researchgate.net/profile/Olfa-Nasraoui/publication/221417012/figure/fig2/AS:669043992322053@1536523926785/Dom-Tree-of-An-Example-Web-Page.png
+
+        - Properties:
+          - body: Returns the body of the HTML document
+          - head: Returns the head of the HTML document
+          - firstElementChild: Returns the first child node of a given node
+          - lastElementChild: Returns the last child node of a given node
+          - children: Returns all child nodes of a given node
+          - nextElementSibling: Returns the next sibling element of a given node
+        - Methods (DOM Selectors):
+          - getElementById('id'): Returns the node with the specified 'id' value
+          - getElementsByClassName('class'): Returns an array of all nodes which have the specified 'class'
+          - getElementsByTagName('tag'): Returns an array of all nodes which used the specified HTML tag
+          - Alternatives
+            - querySelector(selector): Returns the first node that matches the specified selector
+            - querySelectorAll(selector): Returns all nodes which match the specified selector
+
+        - DOM Content Manipulation (Access/Update)
+          - innerText: Refers to the inner text content of the node
+          - innerHTML: Refers to the inner HTML content of the node
+          - value: Refers to the value of the form field node
+
+        - DOM Attribute Manipulation (Access/Update)
+          - Syntax: node.attributeName
+
+        - DOM Style Manipulation (Access/Update)
+          - Single style:
+            - node.style.propertyName
+          - Multiple styles:
+            - node.style.cssText = 'property1: value1; property2: value2; ...'  
+
+        - DOM Node Manipulation (Access/Update)
+          - document.createElement('tag'): Create a new node based on the HTML tag specified
+          - node.appendChild(childNode): Append the child node to the specified node
+          - node.append(childNode1, childNode2, ...): Appends multiple child nodes to the specified node
+          - node.remove(): Removes the specified node from the DOM
+          - node.classList: Refers to the classes assigned to the specified node
+            - node.classList.add('class'): Add a class to the specified node
+            - node.classList.remove('class'): Remove a class from the specified node
+    */
+
+    /* -------------------------- */
+    // const tigerLi = document.getElementById('animal-tiger')
+    // console.log(tigerLi)
+
+    // const wildAnimalNodes = document.getElementsByClassName('wild')
+    // console.log(wildAnimalNodes)
+
+    // const randomClassNodes = document.getElementsByClassName('random')
+    // console.log(randomClassNodes)
+
+    // const randomClassNodes = document.getElementsByTagName('random')
+    // console.log(randomClassNodes)
+
+    // const divNodes = document.getElementsByTagName('div') 
+    // console.log(divNodes)
+
+    // const liNodes = document.getElementsByTagName('li') 
+    // console.log(liNodes)
+
+    // const tigerLi = document.querySelector('#animal-tiger')
+    // console.log(tigerLi)
+
+    // const firstWildAnimal = document.querySelector('.wild')
+    // console.log(firstWildAnimal)
+
+    // const firstDivTag = document.querySelector('div')
+    // console.log(firstDivTag)
+
+    // const firstWildAnimal = document.querySelectorAll('.wild')
+    // console.log(firstWildAnimal)
+
+    // const firstDivTag = document.querySelectorAll('div')
+    // console.log(firstDivTag)
+
+    // const tigerLi = document.getElementById('animal-tiger')
+    // console.log(tigerLi.innerText)
+    // tigerLi.innerText = 'Tigers (National animal of India)'
+
+    // const tigerLi = document.getElementById('animal-tiger')
+    // tigerLi.innerHTML = `Tigers <b>(National animal of India)</b>`
+
+    // const fullnameInput = document.getElementById('fullname')
+    // console.log(fullnameInput.value)
+
+    // function access() {
+    //   const fullnameInput = document.getElementById('fullname')
+    //   console.log(fullnameInput.value)
+    // }
+
+    // function updateHeightWidth() {
+    //   const developerImg = document.getElementById('developer-img')
+    //   // console.log(developerImg.height)
+    //   developerImg.width = '500'
+    //   developerImg.height = '300'
+    // }
+
+    // function updateSrc() {
+    //   const developerImg = document.getElementById('developer-img')
+    //   // console.log(developerImg.src)
+    //   developerImg.src = 'https://www.open.edu.au/-/media/blog/2022/10-october/software-developer-vs-engineer_edited.jpg?h=402&iar=0&w=715&rev=22dc593363e74d4285cb4042c8401af0&hash=A719998C2F009EC9F76F63BFCDFBD24A'
+    // }
+
+    // function showPassword() {
+    //   const password = document.getElementById('password')
+    //   password.type = 'text'
+    // }
+
+    // function updateStyles() {
+    //   const redBox = document.getElementById('box-1')
+    //   // redBox.style.backgroundColor = 'blue'
+    //   // redBox.style.width = '30em'
+    //   // redBox.style.height = '30em'
+    //   // redBox.style.borderRadius = '50%'
+
+    //   // redBox.style.cssText = 'background-color: blue; width: 30em; height: 30em; border-radius: 50%;'
+    // }
+
+    // function generateRandomColor() {
+    //   const r = Math.floor(Math.random()*256)
+    //   const g = Math.floor(Math.random()*256)
+    //   const b = Math.floor(Math.random()*256)
+    //   const a = Math.random()
+
+    //   document.getElementById('box-1').style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${a})`
+    // }
+
+    /* -------------------------- */
+    // function generateHeading() {
+    //   const h1 = document.createElement('h1')
+    //   h1.innerText = 'DOM Manipulation'
+
+    //   const parent = document.getElementById('container')
+    //   parent.appendChild(h1)
+    // }
+
+    // function addHobby() {
+    //   const li = document.createElement('li')
+    //   li.innerText = 'Programming'
+
+    //   const hobbiesList = document.getElementById('hobbies')
+    //   hobbiesList.appendChild(li)
+    // }
+
+    // function addHobbies() {
+    //   const hobby1 = document.createElement('li')
+    //   hobby1.innerText = 'Programming'
+
+    //   const hobby2 = document.createElement('li')
+    //   hobby2.innerText = 'Singing'
+
+    //   const hobby3 = document.createElement('li')
+    //   hobby3.innerText = 'Dancing'
+
+    //   const hobbiesList = document.getElementById('hobbies')
+    //   hobbiesList.append(hobby1, hobby2, hobby3)
+    // }
+
+    // function removeReadingNovels () {
+    //   const readingNovelHobby = document.getElementById('reading-novels')
+    //   readingNovelHobby.remove()
+    // }
+
+    function highlightBread() {
+      document.getElementById('bread').classList.add('highlight')
+    }
+
+    function removeHighlightBread() {
+      document.getElementById('bread').classList.remove('highlight')
+    }
+  </script>
+  <script src="https://kit.fontawesome.com/42d0b601ef.js" crossorigin="anonymous"></script>
+</body>
+</html>
