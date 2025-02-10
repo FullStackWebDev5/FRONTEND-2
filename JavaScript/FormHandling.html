@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Handling</title>
+</head>
+<body>
+  <form>
+    <div style="font-size: 1.5em; margin-bottom: 0.5em;">
+      Registration form
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" placeholder="Enter your name" id="name" name="name">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" placeholder="Enter your email address" id="email" name="email">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" placeholder="Enter your password" id="password" name="password">
+    </div>
+    <div>
+      <label>Gender:</label>
+      <input type="radio" value="MALE" name="gender" class="gender"> Male
+      <input type="radio" value="FEMALE" name="gender" class="gender"> Female
+      <input type="radio" value="OTHERS" name="gender" class="gender"> Others
+    </div>
+    <div>
+      <label>Hobbies:</label>
+      <input type="checkbox" value="SWIM" name="hobbies" class="hobbies"> Swimming
+      <input type="checkbox" value="SING" name="hobbies" class="hobbies"> Sing
+      <input type="checkbox" value="DANCE" name="hobbies" class="hobbies"> Dance
+    </div>
+    <div>
+      <label for="date">Date of birth:</label>
+      <input type="date" placeholder="Enter your password" id="dob" name="dob">
+    </div>
+    <div style="margin-top: 0.25em">
+      <button type="reset">Reset form data</button>
+      <button type="button" onclick="processFormData()">Process form data</button>
+    </div>
+  </form>
+
+  <script>
+    function processFormData() {
+      const name = document.getElementById('name').value
+      const email = document.getElementById('email').value
+      const password = document.getElementById('password').value
+
+      const genderOptions = document.getElementsByClassName('gender')
+      const gender = Array(...genderOptions).find(go => go.checked)
+
+      const hobbiesOptions = document.getElementsByClassName('hobbies')
+      const selectedHobbies = Array(...hobbiesOptions).filter(ho => ho.checked).map(ho => ho.value)
+
+      const dob = document.getElementById('dob').value
+      const dobObj = new Date(dob)
+      const formattedDob = dobObj.toLocaleDateString("en-GB", {
+        weekday: 'short', 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      })
+
+      const userData = {
+        name,
+        email,
+        password,
+        gender: gender ? gender.value : 'N/A',
+        hobbies: selectedHobbies.join(', '),
+        dateOfBirth: formattedDob
+      }
+      console.log(userData)
+    }
+  </script>
+</body>
+</html>
