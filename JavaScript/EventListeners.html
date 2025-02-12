@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Listeners</title>
+  <style>
+    .boxes {
+      border: 1px solid black;
+      box-sizing: border-box;
+      padding: 1em;
+    }
+  </style>
 </head>
 <body style="height: 200vh;">
   <!-- <input type="text" placeholder="Enter your fullname" id="fullname"> -->
@@ -12,6 +19,17 @@
   <img src="https://res.cloudinary.com/highereducation/images/f_auto,q_auto/v1694627620/CyberDegrees.org/typical-day-of-security-software-developer/typical-day-of-security-software-developer.jpg?_i=AA" width="100" id="test-img"> -->
 
   <!-- <input type="text" placeholder="Enter any key" id="gaming-controller" autofocus autocomplete="off"> -->
+
+  <div id="grandparent" class="boxes">
+    GRANDPARENT
+    <div id="parent" class="boxes">
+      PARENT
+      <div id="child" class="boxes">
+        CHILD
+      </div>
+    </div>
+  </div>
+
   <script>
     /*
       # Event Listeners:
@@ -90,6 +108,51 @@
     // document.addEventListener('scroll', function (event) {
     //   console.log('SCROLLED', window.scrollY)
     // })
+
+    /*
+      # Event Propagation: Process by which events are handled and propagated through the DOM tree. (Mostly applicable for nested elements)
+        - 2 phases:
+          - Event capturing: Event is propagated from last ancestor to child node and so on till the target element
+          - Event bubbling *: Event is propagted from target node to the parent and so on till the last ancestor element
+
+        - Stop the event propagation
+          - event.stopPropagation()*
+
+        - Execute capturing phase, use .addEventListener with third argument 'useCapture' as true
+    */
+
+    // Bubbling phase
+    // const grandparent = document.getElementById('grandparent')
+    // grandparent.addEventListener('click', function (event) {
+    //   console.log('Grand parent clicked')
+    // })
+
+    // const parent = document.getElementById('parent')
+    // parent.addEventListener('click', function (event) {
+    //   console.log('Parent clicked')
+    // })
+
+    // const child = document.getElementById('child')
+    // child.addEventListener('click', function (event) {
+    //   console.log('Child clicked')
+    //   // event.stopPropagation()
+    // })
+
+    // Capturing phase
+    // const grandparent = document.getElementById('grandparent')
+    // grandparent.addEventListener('click', function (event) {
+    //   console.log('Grand parent clicked')
+    // }, true)
+
+    // const parent = document.getElementById('parent')
+    // parent.addEventListener('click', function (event) {
+    //   console.log('Parent clicked')
+    // }, true)
+
+    // const child = document.getElementById('child')
+    // child.addEventListener('click', function (event) {
+    //   console.log('Child clicked')
+    // }, true)
   </script>
 </body>
 </html>
