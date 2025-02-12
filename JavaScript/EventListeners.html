@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Listeners</title>
+</head>
+<body style="height: 200vh;">
+  <!-- <input type="text" placeholder="Enter your fullname" id="fullname"> -->
+  <!-- <input type="text" placeholder="Enter image URL for preview" id="img-url">
+  <br><br>
+  <img src="https://res.cloudinary.com/highereducation/images/f_auto,q_auto/v1694627620/CyberDegrees.org/typical-day-of-security-software-developer/typical-day-of-security-software-developer.jpg?_i=AA" width="100" id="test-img"> -->
+
+  <!-- <input type="text" placeholder="Enter any key" id="gaming-controller" autofocus autocomplete="off"> -->
+  <script>
+    /*
+      # Event Listeners:
+        - Used to perform logic based on events occured
+        - Using .addEventListener() method
+        - Syntax:
+          element.addEventListener('event', function(event) {
+            // Logic to be performed
+          })
+          - Callback parameter:
+            - event: Event object
+              - .type: Name of the event
+              - .target: The element on which the event occured
+              - .target.value: Access value of the input text (while handling forms)
+        - Examples:
+          - onclick: 'click' event ***
+          - ondblclick: 'dblclick' event (Double click)
+          - onmouseover: 'mouseover' event *
+          - onmouseout: 'mouseout' event
+          - onmousemove: 'mousemove' event
+          - oninput: 'input' event ***
+          - onkeydown: 'keydown' event
+          - onkeyup: 'keyup' event
+          - onkeypress: 'keypress' event
+          - onfocus: 'focus' event ***
+          - onblurL 'blur' event ***
+          - onchange: 'change' event ***
+          - onload: 'load' event * (Document loaded)
+          - onsubmit: 'submit' event
+    */
+
+    // const element = document.getElementById('fullname')
+    // element.addEventListener('click', function () {
+    //   console.log('Input text box was clicked');
+    // })
+
+    // const element = document.getElementById('fullname')
+    // element.addEventListener('dblclick', function () {
+    //   console.log('Input text box was double clicked');
+    // })
+
+    // const element = document.getElementById('fullname')
+    // element.addEventListener('click', function (event) {
+    //   console.log('Input text box was clicked', event.type);
+    // })
+
+    // const element = document.getElementById('fullname')
+    // element.addEventListener('input', function (event) {
+    //   console.log('Fullname was updated', event.target.value);
+    // })
+
+    // const element = document.getElementById('img-url')
+    // element.addEventListener('input', function (event) {
+    //   const imgElement = document.getElementById('test-img')
+    //   imgElement.src = event.target.value
+    // })
+
+    // const element = document.getElementById('gaming-controller')
+    // element.addEventListener('keydown', function (event) {
+    //   switch(event.key) {
+    //     case 'ArrowUp':
+    //       console.log('ACCELERATING ...')
+    //       break
+    //     case 'ArrowDown':
+    //       console.log('BRAKING ...')
+    //       break
+    //     case 'ArrowLeft':
+    //       console.log('TURNING LEFT ...')
+    //       break
+    //     case 'ArrowRight':
+    //       console.log('TURNING RIGHT ...')
+    //       break
+    //   }
+    // })
+
+    // document.addEventListener('scroll', function (event) {
+    //   console.log('SCROLLED', window.scrollY)
+    // })
+  </script>
+</body>
+</html>
