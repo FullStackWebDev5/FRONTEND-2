@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Handling</title>
+  <style>
+    #registration-form {
+      width: max-content;
+      margin: 2em auto;
+      font-size: 1.25em;
+      border: 1px solid #ddd;
+      padding: 2em;
+    }
+
+    #registration-form #form-title {
+      justify-content: center;
+      font-size: 1.5em;
+      margin: 0 0 1em;
+      text-align: center;
+    }
+
+    #registration-form > div {
+      margin: 0.5em 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #registration-form > div input {
+      padding: 0.5em 1em;
+    }
+
+    #registration-form #actions {
+      justify-content: center;
+      margin: 2em 0 0;
+    }
+
+    #registration-form #actions button {
+      margin: 0 0.5em;
+      font-size: 0.8em;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form id="registration-form">
+    <div id="form-title">
+      Registration form
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" placeholder="Enter your name" id="name" name="name" autocomplete="off">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" placeholder="Enter your email address" id="email" name="email" autocomplete="off">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" placeholder="Enter your password" id="password" name="password">
+    </div>
+    <div>
+      <label>Gender:</label>
+      <input type="radio" value="MALE" name="gender" class="gender"> Male
+      <input type="radio" value="FEMALE" name="gender" class="gender"> Female
+      <input type="radio" value="OTHERS" name="gender" class="gender"> Others
+    </div>
+    <div>
+      <label>Hobbies:</label>
+      <input type="checkbox" value="SWIM" name="hobbies" class="hobbies"> Swimming
+      <input type="checkbox" value="SING" name="hobbies" class="hobbies"> Singing
+      <input type="checkbox" value="DANCE" name="hobbies" class="hobbies"> Dancing
+    </div>
+    <div>
+      <label for="date">Date of birth:</label>
+      <input type="date" placeholder="Enter your password" id="dob" name="dob">
+    </div>
+    <div id="actions">
+      <button type="reset">Reset</button>
+      <button type="button" onclick="confirmRegistration()">Register</button>
+    </div>
+  </form>
+
+  <script>
+    function confirmRegistration() {
+      const name = document.getElementById('name').value
+      const email = document.getElementById('email').value
+      const password = document.getElementById('password').value
+
+      const genderOptions = document.getElementsByClassName('gender')
+      const gender = Array(...genderOptions).find(go => go.checked)
+
+      const hobbiesOptions = document.getElementsByClassName('hobbies')
+      const selectedHobbies = Array(...hobbiesOptions).filter(ho => ho.checked).map(ho => ho.value)
+
+      const dob = document.getElementById('dob').value
+      const dobObj = new Date(dob)
+      const formattedDob = dobObj.toLocaleDateString("en-GB", {
+        weekday: 'short', 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      })
+
+      /* 
+        # Validation rules
+          1. Name: 
+            - Atleast 3 characters
+          2. Email:
+            - Should have '@' character
+            - Should have '.' character
+            - Should have at least 3 characters before '@' character
+            - Should have at least 2 characters after '.' character
+          3. Password:
+            - Should have atleast 5 characters
+            - Should atleast contain one of these special characters (@, #, $)
+          4. Gender:
+            - Atleast one selection
+          5. Hobbies:
+            - Atleast one selection
+          6. Date of birth:
+            - Should be selected
+      */
+
+      if(name.length < 3) {
+        alert('Error: Name should have at least 3 characters')
+        // document.getElementById('name').style.border = '1px solid red'
+        return
+      }
+
+      if(!email.includes('@') || 
+        !email.includes('.') ||
+        email.indexOf('@') < 3 ||
+        (email.length-1) - email.lastIndexOf('.') < 2
+      ) {
+        alert('Error: Invalid email address')
+        return
+      }
+  
+      if(password.length < 5 ||
+        (
+          !password.includes('@') && 
+          !password.includes('#') && 
+          !password.includes('$')
+        )
+      ) {
+        alert('Error: Invalid password')
+        return
+      }
+
+      if(!gender) {
+        alert('Error: Please select gender')
+        return
+      }
+
+      if(!selectedHobbies.length) {
+        alert('Error: Please select atleast one hobby')
+        return
+      }
+
+      if(!dob) {
+        alert('Error: Please select date of birth')
+        return
+      }
+
+      const userData = {
+        name,
+        email,
+        password,
+        gender: gender.value,
+        hobbies: selectedHobbies.join(', '),
+        dateOfBirth: formattedDob
+      }
+      console.log('Registration successful! \nUser Data: ', userData)
+    }
+
+
+    /*
+      # Form Validation: Process of checking the input entered by the user
+        - Why validation?
+          - To ensure correct data being stored in your database
+          - Make application secure
+    */
+  </script>
+</body>
+</html>
