@@ -34,17 +34,17 @@
     <!-- <button type="button" class="btn btn-dark" onclick="login()" id="login-btn">Login</button>
     <p class="lead" id="welcome-msg">Welcome, Srinivas!</p> -->
 
-    <!-- <img src="assets/rocket.png" width="400" id="rocket-img">
+    <img src="assets/rocket.png" width="400" id="rocket-img">
     <h6 class="display-6" id="counter-display"></h6>
-    <button type="button" class="btn btn-dark" id="launch-btn" onclick="launchRocket()">Launch rocket ▶️</button> -->
+    <button type="button" class="btn btn-dark" id="launch-btn" onclick="launchRocket()">Launch rocket ▶️</button>
 
-    <div style="background-color: #eee; padding: 1em 2em; border: 1px solid #ddd; border-radius: 6px;">
+    <!-- <div style="background-color: #eee; padding: 1em 2em; border: 1px solid #ddd; border-radius: 6px;">
       <h3 class="display-3">
         <span id="hour">23</span>&nbsp;:
         <span id="min">31</span>&nbsp;:
         <span id="sec">19</span>
       </h3>
-    </div>
+    </div> -->
   </div>
   <script>
     /*
@@ -155,31 +155,31 @@
     //   console.log('We are learning Async JS today!')
     // }, 2000) 
 
-    // function launchRocket() {
-    //   document.getElementById('launch-btn').style.display = 'none'
+    function launchRocket() {
+      document.getElementById('launch-btn').style.display = 'none'
 
-    //   let counter = 10
-    //   let timerId = setInterval(() => {
-    //     if(counter == 0) {
-    //       clearInterval(timerId)
-    //       document.getElementById('counter-display').innerText = 'Rocket launched 🚀'
-    //       document.getElementById('rocket-img').src = 'https://mir-s3-cdn-cf.behance.net/project_modules/hd/e59b07112562445.6017104965538.gif'
-    //       return
-    //     }
-    //     document.getElementById('counter-display').innerText= `Launching ... ${counter--}`
-    //   }, 1000)
-    // }
+      let counter = 10
+      let timerId = setInterval(() => {
+        if(counter == 0) {
+          clearInterval(timerId)
+          document.getElementById('counter-display').innerText = 'Rocket launched 🚀'
+          document.getElementById('rocket-img').src = 'https://mir-s3-cdn-cf.behance.net/project_modules/hd/e59b07112562445.6017104965538.gif'
+          return
+        }
+        document.getElementById('counter-display').innerText= `Launching ... ${counter--}`
+      }, 1000)
+    }
 
-    setInterval(() => {
-      const now = new Date()
-      const hour = now.getHours()
-      const min = now.getMinutes()
-      const sec = now.getSeconds()
+    // setInterval(() => {
+    //   const now = new Date()
+    //   const hour = now.getHours()
+    //   const min = now.getMinutes()
+    //   const sec = now.getSeconds()
 
-      document.getElementById('hour').innerText = hour.toString().padStart(2, '0')
-      document.getElementById('min').innerText = min.toString().padStart(2, '0')
-      document.getElementById('sec').innerText = sec.toString().padStart(2, '0')
-    }, 1000)
+    //   document.getElementById('hour').innerText = hour.toString().padStart(2, '0')
+    //   document.getElementById('min').innerText = min.toString().padStart(2, '0')
+    //   document.getElementById('sec').innerText = sec.toString().padStart(2, '0')
+    // }, 1000)
 
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
