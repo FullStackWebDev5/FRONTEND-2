@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asynchronous JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    /* #test-alert {
+      position: absolute;
+      left: 50%;
+      top: 10px;
+      transform: translateX(-50%);
+      display: none;
+    } */
+
+    /* #welcome-msg {
+      display: none;
+    } */
+  </style>
+</head>
+<body>
+  <div class="container mt-5 pt-5 text-center">
+    <h1>Asynchronous JavaScript</h1>
+
+    <!-- <button onclick="startTimer()">Initiate a bomb blast</button>
+    <button onclick="clearTimer()">Defuse the bomb</button> -->
+
+    <!-- <div class="alert alert-success" role="alert" id="test-alert">
+      A simple success alert—check it out!
+    </div>
+    <button type="button" class="btn btn-dark" onclick="showAlert()">Show alert</button> -->
+
+    <!-- <button type="button" class="btn btn-dark" onclick="login()" id="login-btn">Login</button>
+    <p class="lead" id="welcome-msg">Welcome, Srinivas!</p> -->
+
+    <!-- <img src="assets/rocket.png" width="400" id="rocket-img">
+    <h6 class="display-6" id="counter-display"></h6>
+    <button type="button" class="btn btn-dark" id="launch-btn" onclick="launchRocket()">Launch rocket ▶️</button> -->
+
+    <div style="background-color: #eee; padding: 1em 2em; border: 1px solid #ddd; border-radius: 6px;">
+      <h3 class="display-3">
+        <span id="hour">23</span>&nbsp;:
+        <span id="min">31</span>&nbsp;:
+        <span id="sec">19</span>
+      </h3>
+    </div>
+  </div>
+  <script>
+    /*
+      # Asynchronous JavaScript
+        - Synchronous code: Executed one line at a time
+        - Asynchronous code: Executed as an independent logic (Executed parallelly)
+
+        - JavaScript is a single threaded language
+          - There is only one thread (main thread) which executes the complete JS code one expression at a time
+          - Still, it can execute asynchronous code (Event loop, Web APIs, Event queues)
+    */
+
+    // console.log(1)
+    // console.log(2)
+    // console.log(3)
+    // console.log(4)
+    // console.log(5)
+
+    /*
+      # Timer methods
+        - setTimeout(): Execute code after a specified time
+          - Syntax:
+            const timerId = setTimeout(callback, time)
+            - Parameters
+              - callback: Function to be executed after the specified time
+              - time: Time in milliseconds (1s = 1000ms)
+            - Returns:
+              timerId: Unique ID assigned to the timeout
+          - clearTimeout(timerId): Clear the timeout created by setTimeout
+        - setInterval(): Execute code repeatedly after specified time intervals
+          - Syntax:
+            const timerId = setInterval(callback, time)
+            - Parameters
+              - callback: Function to be executed repeatedly after the specified time intervals
+              - time: Time in milliseconds (1s = 1000ms)
+            - Returns:
+              timerId: Unique ID assigned to the interval timer created
+          - clearInterval(timerId): Clear the interval timer created by setInterval
+    */
+
+    // setTimeout(() => {
+    //   console.log('HELLO ALL!')
+    // }, 3000)
+
+    // setTimeout(() => {
+    //   console.log('REMINDER: 1min is up!')
+    // }, 60*1000)
+
+    // console.log(1)
+    // console.log(2)
+    // setTimeout(() => {
+    //   console.log(3)
+    // }, 0)
+    // console.log(4)
+    // console.log(5)
+
+    // setTimeout(() => {
+    //   console.log('TASK 1')
+    // }, 3000)
+    // setTimeout(() => {
+    //   console.log('TASK 2')
+    // }, 5000)
+
+    // const timer1 = setTimeout(() => {
+    //   console.log('TASK 1')
+    // }, 3000)
+    // const timer2 = setTimeout(() => {
+    //   console.log('TASK 2')
+    // }, 5000)
+    // console.log(timer1, timer2)
+
+    // let timerId = null
+    // function startTimer() {
+    //   console.log('TIMER INITIATED!')
+      
+    //   timerId = setTimeout(() => {
+    //     console.log('BOOM 💣💥')
+    //   }, 10000)
+    // }
+
+    // function clearTimer() {
+    //   clearTimeout(timerId)
+    //   console.log('BOMB DEFUSED!🦸')
+    // }
+
+    // function showAlert() {
+    //   document.getElementById('test-alert').style.display = 'block'
+
+    //   setTimeout(() => {
+    //     document.getElementById('test-alert').style.display = 'none'
+    //   }, 3000)
+    // }
+
+    // function login() {
+    //   alert('You have successfully logged in! You can access the application for the next 1 minute')
+    //   document.getElementById('login-btn').style.display = 'none'
+    //   document.getElementById('welcome-msg').style.display = 'block'
+
+    //   setTimeout(() => {
+    //     alert('You have been logged out! Please login again')
+    //     document.getElementById('login-btn').style.display = 'block'
+    //      document.getElementById('welcome-msg').style.display = 'none'
+    //   }, 60 * 1000)
+    // }
+
+    // setInterval(() => {
+    //   console.log('Hello students!')
+    //   console.log('We are learning Async JS today!')
+    // }, 2000) 
+
+    // function launchRocket() {
+    //   document.getElementById('launch-btn').style.display = 'none'
+
+    //   let counter = 10
+    //   let timerId = setInterval(() => {
+    //     if(counter == 0) {
+    //       clearInterval(timerId)
+    //       document.getElementById('counter-display').innerText = 'Rocket launched 🚀'
+    //       document.getElementById('rocket-img').src = 'https://mir-s3-cdn-cf.behance.net/project_modules/hd/e59b07112562445.6017104965538.gif'
+    //       return
+    //     }
+    //     document.getElementById('counter-display').innerText= `Launching ... ${counter--}`
+    //   }, 1000)
+    // }
+
+    setInterval(() => {
+      const now = new Date()
+      const hour = now.getHours()
+      const min = now.getMinutes()
+      const sec = now.getSeconds()
+
+      document.getElementById('hour').innerText = hour.toString().padStart(2, '0')
+      document.getElementById('min').innerText = min.toString().padStart(2, '0')
+      document.getElementById('sec').innerText = sec.toString().padStart(2, '0')
+    }, 1000)
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!--
+  # Future
+    - Event loop, Web APIs, Event queues
+-->
