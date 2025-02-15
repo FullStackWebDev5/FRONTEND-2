@@ -47,6 +47,12 @@ function displayTasks() {
     label.for = 'firstCheckbox'
     label.innerText = task
 
+    input.addEventListener('change', (event) => {
+      if(event.target.checked) {
+        label.style.textDecoration = 'line-through'
+      }
+    })
+
     div.append(input, label)
 
     const button = document.createElement('button')

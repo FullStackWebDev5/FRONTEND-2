@@ -7,8 +7,23 @@
   text-align: left;
 }
 
+#task-list .form-check-input {
+  cursor: pointer;
+}
+
+#alert-container {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 3;
+}
+
 @media screen and (max-width: 576px) {
   .task-container {
     width: 100%;
+  }
+  
+  #alert-container {
+    font-size: 0.75em;
   }
 }
