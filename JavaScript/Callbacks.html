@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback</title>
+</head>
+<body>
+  <script>
+    /*
+      # Callback: A function passed as an argument to another function, to be "executed later"
+      - Syntax:
+        - Syntax 1:
+          function fun1() {
+            console.log('fun1')
+          }
+          fun2(fun1) // Callback Syntax
+        - Syntax 2:
+          fun2(function () {
+            console.log('fun1')
+          })
+      - Handle asynchronous code
+    */
+
+    /* ----------------------------- */
+    // function fun2(callback) {
+    //   console.log('Function 2')
+    //   callback()
+    // }
+
+    // fun2(function () {
+    //   console.log('Function 1')
+    // })
+
+    /* ----------------------------- */
+    // function fun1(callback) {
+    //   console.log(1)
+    //   console.log(2)
+    //   setTimeout(function () {
+    //     console.log(3)
+    //     callback()
+    //   }, 3000)
+    // }
+
+    // fun1(() => {
+    //   console.log(4)
+    //   console.log(5)
+    // })
+
+    /* ----------------------------- */
+    /*
+      Example: Food order status
+        - 1. ORDER ACCEPTED: Instantly
+        - 2. ORDER PREPARED: After 10 seconds
+    */
+
+    // function orderAccepted(callback) {
+    //   console.log('ORDER ACCEPTED')
+    //   setTimeout(() => {
+    //     callback()
+    //   }, 10000)
+    // }
+
+    // function orderPrepared() {
+    //   console.log('ORDER PREPARED. READY TO PICKUP')
+    // }
+
+    // orderAccepted(orderPrepared)
+
+    /* ----------------------------- */
+    /*
+      Example: Fetching the data from the server and then processing it
+        - 1. Fetching data from the server: 7 seconds
+        - 2. Processing the data received: 5 seconds
+
+        Total time taken for all tasks: 12 seconds
+    */
+
+    // function fetchData(callback) {
+    //   console.log('FETCHING DATA FROM THE SERVER ...')
+    //   setTimeout(() => {
+    //     console.log('FETCHED DATA SUCCESSFULLY ✅')
+    //     callback()
+    //   }, 7000)
+    // }
+
+    // function processData() {
+    //   console.log('PROCESSING DATA ...')
+    //   setTimeout(() => {
+    //     console.log('PROCESSED DATA SUCCESSFULLY ✅')
+    //   }, 5000)
+    // }
+
+    // fetchData(processData)
+
+    // function fetchData(callback) {
+    //   console.log('FETCHING DATA FROM THE SERVER ...')
+    //   setTimeout(() => {
+    //     console.log('FETCHED DATA SUCCESSFULLY ✅')
+    //     callback()
+    //   }, 7000)
+    // }
+
+    // fetchData(function () {
+    //   console.log('PROCESSING DATA ...')
+    //   setTimeout(() => {
+    //     console.log('PROCESSED DATA SUCCESSFULLY ✅')
+    //   }, 5000)
+    // })
+  </script>
+</body>
+</html>
