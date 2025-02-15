@@ -66,7 +66,7 @@ function deleteTask(index) {
   `
 }
 
-/* DELETE TASKS */
+/* DISPLAY TASKS */
 function displayTasks(tasks) {
   for(let i = 0; i < tasks.length; i++) {
     document.getElementById('task-list').innerHTML +=

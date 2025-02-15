@@ -1,0 +1,14 @@
+.task-container {
+  width: 30em;
+  margin: 1em auto;
+}
+
+#task-list {
+  text-align: left;
+}
+
+@media screen and (max-width: 576px) {
+  .task-container {
+    width: 100%;
+  }
+}
