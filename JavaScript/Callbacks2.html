@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback Hell</title>
+</head>
+<body>
+  <script>
+    /*
+      # Example: Order tracking status for food ordered online
+        - Instantly: Order confirmed ✅
+        - After 2 seconds: Order is being prepared 🍲
+        - After 10 seconds: Order prepared 🎉
+        - After 5 seconds: Order handed over to the delivery person 📦
+        - After 3 seconds: Order is on the way 🛵
+        - After 8 seconds: Order has reached it's destination 📍
+        - After 4 seconds: Order has been delivered 😋
+
+        - Total time for processing order: 32 seconds
+
+      # Callback Hell (Pyramid of doom): The structure formed when a callback function is within another callback function and the pattern continues ...
+        - Hence, the alternative approaches of handling asynchronous code can be used like 'promises' and 'async await'
+    */
+
+    const placeOrder = () => {
+      console.log('Order confirmed ✅')
+
+      setTimeout(() => {
+        console.log('Order is being prepared 🍲')
+        setTimeout(() => {
+          console.log('Order prepared 🎉')
+          setTimeout(() => {
+            console.log('Order handed over to the delivery person 📦')
+            setTimeout(() => {
+              console.log('Order is on the way 🛵')
+              setTimeout(() => {
+                console.log(`Order has reached it's destination 📍`)
+                setTimeout(() => {
+                  console.log('Order has been delivered 😋')
+                }, 4000)
+              }, 8000)
+            }, 3000)
+          }, 5000)
+        }, 10000)
+      }, 2000)
+    }
+
+    placeOrder()
+  </script>
+</body>
+</html>
