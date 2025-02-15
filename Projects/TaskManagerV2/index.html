@@ -50,10 +50,14 @@
       <div id="alert-container">
       </div>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Enter a new task" aria-describedby="button-addon2" id="new-task-input" autocomplete="off">
-        <button class="btn btn-dark" type="button" id="button-addon2" onclick="addTask()">
+        <input type="text" class="form-control" placeholder="Enter a new task" aria-describedby="new-task-btn" id="new-task-input" autocomplete="off">
+        <button class="btn btn-dark" type="button" id="new-task-btn" onclick="addTask()">
           <i class="fa-solid fa-plus pe-1"></i>
           Add task
+        </button>
+        <button class="btn btn-dark" type="button" id="update-task-btn" onclick="updateTask()">
+          <i class="fa-solid fa-check"></i>
+          Confirm changes
         </button>
       </div>
       <ul id="task-list" class="list-group mt-2">

@@ -3,12 +3,20 @@
   margin: 1em auto;
 }
 
+.task-container #update-task-btn {
+  display: none;
+}
+
 #task-list {
   text-align: left;
 }
 
 #task-list .form-check-input {
   cursor: pointer;
+}
+
+#task-list .checked-btn {
+  border-radius: 50%;
 }
 
 #alert-container {
