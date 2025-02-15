@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promises</title>
+</head>
+<body>
+  <h1>Promises</h1>
+  <script>
+    /*
+      # Promises: Objects that represent the eventual completion or failure of an asynchronous operation
+        - Properties:
+          - State:
+            - Pending
+            - Resolved (Fulfilled)
+            - Rejected
+          - Result: Any value that can be passed along with resolving/rejecting a promise
+        
+        - Syntax:
+          - Creating a promise
+            const promise1 = new Promise((resolve, reject) => {
+              // Logic to resolve/reject the promise
+            })
+            - Use Promise Constructor to create a promise object
+            - Promise constructor takes a callback function with two parameters: 
+              - resolve(): Method to resolve the promise
+              - reject(): Method to reject the promise
+            - Within resolve/reject methods, result value can be passed as an argument
+          - Handle the promise
+            promise1.then(() => {
+              // Logic to handle resolved state
+            }).catch(() => {
+              // Logic to handle rejected state
+            })
+            .then() method callback is used to handle the resolved state of the promise
+            .catch() method callback is used to handle the rejected state of the promise
+            .finally() method callback is executed regardless of the state of the promise
+            - Result can be accessed as the callback paramter for both .then()/.catch() methods based on resolved/rejected state respectively
+
+        - Additional Note:
+          - Relation between promise creation and handling
+            - resolve() -> .then() callback
+            - reject() -> .catch() callback
+    */
+
+    // # Example 1 (Synchronous)
+    // const promise1 = new Promise((resolve, reject) => {
+    //   resolve()
+    //   // reject()
+    // })
+    
+    // promise1.then(() => {
+    //   console.log('Promise 1 resolved :)')
+    // }).catch(() => {
+    //   console.log('Promise 1 rejected :(')
+    // })
+
+    // # Example 2 (Synchronous, with result)
+    // const promise1 = new Promise((resolve, reject) => {
+    //   resolve('Hi')
+    //   // reject('Bye')
+    // })
+    
+    // promise1.then((resolvedResult) => {
+    //   console.log('Promise 1 resolved :)', resolvedResult)
+    // }).catch((rejectedResult) => {
+    //   console.log('Promise 1 rejected :(', rejectedResult)
+    // })
+
+    // # Example 3 (Asynchronous)
+    // const promise1 = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve()
+    //   }, 3000)
+    // })
+
+    // console.log(promise1) // pending
+    
+    // promise1.then(() => {
+    //   console.log('Promise 1 resolved :)')
+    //   console.log(promise1) // fulfilled
+    // }).catch(() => {
+    //   console.log('Promise 1 rejected :(')
+    //   console.log(promise1) // rejected
+    // })
+
+    // # Example 4 (Asynchronous, with result)
+    // const fetchDataPromise = new Promise((resolve, reject) => {
+    //   const USERS = [
+    //     {
+    //       "id": 1,
+    //       "email": "george.bluth@reqres.in",
+    //       "first_name": "George",
+    //       "last_name": "Bluth",
+    //       "avatar": "https://reqres.in/img/faces/1-image.jpg"
+    //     },
+    //     {
+    //       "id": 2,
+    //       "email": "janet.weaver@reqres.in",
+    //       "first_name": "Janet",
+    //       "last_name": "Weaver",
+    //       "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    //     },
+    //     {
+    //       "id": 3,
+    //       "email": "emma.wong@reqres.in",
+    //       "first_name": "Emma",
+    //       "last_name": "Wong",
+    //       "avatar": "https://reqres.in/img/faces/3-image.jpg"
+    //     }
+    //   ]
+    //   console.log('Fetching data ...')
+    //   setTimeout(() => {
+    //     // resolve(USERS)
+    //     reject('Server is down!')
+    //   }, 3000)
+    // })
+
+    // fetchDataPromise.then((data) => {
+    //   console.log('Fetched data successfully ✅\n Data received: ', data)
+    // }).catch((errorMessage) => {
+    //   console.log('Could not fetch data ⚠️', errorMessage)
+    // })
+
+    // # Example 5 (finally())
+    // const promise1 = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     // resolve()
+    //     reject()
+    //   }, 3000)
+    // })
+    
+    // promise1.then(() => {
+    //   console.log('Promise 1 resolved :)')
+    // }).catch(() => {
+    //   console.log('Promise 1 rejected :(')
+    // }).finally(() => {
+    //   console.log('FINALLY')
+    // })
+  </script>
+</body>
+</html>
