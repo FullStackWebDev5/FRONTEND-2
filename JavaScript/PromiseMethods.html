@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise Methods</title>
+</head>
+<body>
+  <script>
+    /*
+      # Promise Methods:
+        - all **:
+          - Resolves when all the promises are resolved
+          - Rejects when any one promise is rejected
+          - Syntax:
+            Promise.all([promise1, promise2, ...])
+              .then(() => {})
+              .catch(() => {})
+
+          - Additional pointers:
+            - Total time taken to resolve = Time taken by the promise which takes the largest time to resolve
+            - Total time taken to reject = Time taken by the promise which takes the least time to reject
+            - Resolved result = Array of resolved results of individual promises
+            - Rejected result = Result of the first rejected promise
+
+        - any:
+          - Resolves when any one promise is resolved
+          - Rejects when all the promises are rejected
+          - Syntax:
+            Promise.any([promise1, promise2, ...])
+              .then(() => {})
+              .catch(() => {})
+
+          - Additional pointers:
+            - Total time taken to resolve = Time taken by the promise which takes the least time to resolve
+            - Total time taken to reject = Time taken by the promise which takes the largest time to reject
+            - Resolved result = Result of the first resolved promise
+            - Rejected result = 'AggregateError: All promises were rejected'
+    */
+
+    // const friend1Promise = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     // resolve('Friend 1 has reached!')
+    //     reject('Friend 1 Urgent task!')
+    //   }, 5000)
+    // })
+
+    // const friend2Promise = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     // resolve('Friend 2 has reached!')
+    //     reject('Friend 2 Urgent task!')
+    //   }, 7000)
+    // })
+
+    // const friend3Promise = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve('Friend 3 has reached!')
+    //     // reject('Friend 3 Urgent task!')
+    //   }, 3000)
+    // })
+
+    // // Promise.all([friend1Promise, friend2Promise, friend3Promise])
+    // //   .then(() => console.log('GOA IS ON!'))
+    // //   .catch(() => console.log('TRIP CANCELLED'))
+
+    // Promise.all([friend1Promise, friend2Promise, friend3Promise])
+    //   .then((resolvedResult) => console.log('GOA IS ON!', resolvedResult))
+    //   .catch((rejectedResult) => console.log('TRIP CANCELLED', rejectedResult))
+
+    /* ---------------------------- */
+    const candidate1Promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('Candidate 1 completed the asssignment!')
+        // reject('Candidate 1 failed to complete the asssignment!')
+      }, 5000)
+    })
+
+    const candidate2Promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('Candidate 2 completed the asssignment!')
+        // reject('Candidate 2 failed to complete the asssignment!')
+      }, 7000)
+    })
+
+    const candidate3Promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // resolve('Candidate 3 completed the asssignment!')
+        reject('Candidate 3 failed to complete the asssignment!')
+      }, 3000)
+    })
+
+    Promise.any([candidate1Promise, candidate2Promise, candidate3Promise])
+      .then((resolvedResult) => console.log('One candidate was hired!', resolvedResult))
+      .catch((rejectedResult) => console.log('None of the candidates were hired!', rejectedResult))
+  </script>
+</body>
+</html>
