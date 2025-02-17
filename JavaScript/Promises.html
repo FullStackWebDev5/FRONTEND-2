@@ -9,7 +9,7 @@
   <h1>Promises</h1>
   <script>
     /*
-      # Promises: Objects that represent the eventual completion or failure of an asynchronous operation
+      # Promises ***: Objects that represent the eventual completion or failure of an asynchronous operation
         - Properties:
           - State:
             - Pending
@@ -137,6 +137,88 @@
     //   console.log('Promise 1 rejected :(')
     // }).finally(() => {
     //   console.log('FINALLY')
+    // })
+
+    // # Promise function: A function that returns a promise
+    // const promise1 = () => {
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       resolve()
+    //     }, 5000)
+    //   })
+    // }
+
+    // const promise1 = () => new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve()
+    //   }, 5000)
+    // })
+
+    // promise1().then(() => {
+    //   console.log('RESOLVED')
+    // }).catch(() => {
+    //   console.log('REJECTED')
+    // })
+    
+    /*
+      # Promise chaining **:
+        - During promise handling, if .then() method returns a new promise, another .then() method needs to be 'chained' to handle this new promise. This pattern continues until there is a .then() method which does not return a promise
+    */
+
+    // # Example 1
+    // const promise1 = () => {
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       resolve()
+    //     }, 5000)
+    //   })
+    // }
+
+    // const promise2 = () => {
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       resolve()
+    //     }, 3000)
+    //   })
+    // }
+
+    // promise1().then(() => {
+    //   console.log('PROMISE 1 RESOLVED')
+    //   return promise2()
+    // }).then(() => {
+    //   console.log('PROMISE 2 RESOLVED')
+    // }).catch(() => {
+    //   console.log('PROMISE 1 OR PROMISE 2 REJECTED')
+    // })
+
+    /*
+      # Example 2: Fetching the data from the server and then processing it
+        - 1. Fetching data from the server: 7 seconds
+        - 2. Processing the data received: 5 seconds
+
+        Total time taken for all tasks: 12 seconds
+    */
+    // const processData = () => new Promise((resolve, reject) => {
+    //   console.log('PROCESSING DATA ...')
+    //   setTimeout(() => {
+    //     resolve()
+    //   }, 5000)
+    // })
+
+    // const fetchData = () => new Promise((resolve, reject) => {
+    //   console.log('FETCHING DATA FROM THE SERVER ...')
+    //   setTimeout(() => {
+    //     resolve()
+    //   }, 7000)
+    // })
+
+    // fetchData().then(() => {
+    //   console.log('FETCHED DATA SUCCESSFULLY ✅')
+    //   return processData()
+    // }).then(() => {
+    //   console.log('PROCESSING DATA SUCCESSFULLY ✅')
+    // }).catch(() => { 
+    //   console.log('Error while fetching and processing data')
     // })
   </script>
 </body>
