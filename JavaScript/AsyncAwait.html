@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async Await</title>
+</head>
+<body>
+  <script>
+    /*
+      # Async Await
+        - Syntactic Sugar (Alternative) for promise handling
+        - Syntax:
+            async function handlePromise() {
+              try {
+                const resolvedResult = await promise1
+                console.log(resolvedResult)
+              } catch (rejectedResult) {
+                console.log(rejectedResult)
+              }
+            }
+            - 'async' keyword: To make a function asynchrnous
+            - 'await' keyword:
+              - To pause the execustion of async function until the promise is resolved
+              - Returns the resolved result of the promise when the promise is resolved
+              - Throws the rejected result of the promise when the promise is rejected
+
+        - Different types of asynchronous functions
+          - async function abc() {}
+          - const abc = async function() {}
+          - const abc = async () => {}
+    */
+
+    // const promise1 = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     // resolve('Hi')
+    //     reject('Bye')
+    //   }, 3000)
+    // })
+    
+    // promise1.then((resolvedResult) => {
+    //   console.log(resolvedResult)
+    // }).catch((rejectedResult) => {
+    //   console.log(rejectedResult)
+    // })
+
+    // async function handlePromise() {
+    //   try {
+    //     const resolvedResult = await promise1
+    //     console.log(resolvedResult)
+    //   } catch (rejectedResult) {
+    //     console.log(rejectedResult)
+    //   }
+    // }
+    
+    // handlePromise()
+
+    /*
+      # Example: Fetching the data from the server and then processing it
+        - 1. Fetching data from the server: 7 seconds
+        - 2. Processing the data received: 5 seconds
+
+        Total time taken for all tasks: 12 seconds
+    */
+    // const processData = () => new Promise((resolve, reject) => {
+    //   console.log('PROCESSING DATA ...')
+    //   setTimeout(() => {
+    //     resolve()
+    //   }, 5000)
+    // })
+
+    // const fetchData = () => new Promise((resolve, reject) => {
+    //   console.log('FETCHING DATA FROM THE SERVER ...')
+    //   setTimeout(() => {
+    //     resolve()
+    //   }, 7000)
+    // })
+
+    // const fetchAndProcessData = async () => {
+    //   try {
+    //     await fetchData()
+    //     console.log('FETCHED DATA SUCCESSFULLY ✅')
+    //     await processData()
+    //     console.log('PROCESSING DATA SUCCESSFULLY ✅')
+    //   } catch (error) {
+    //     console.log(error)
+    //   }
+    // }
+    // fetchAndProcessData()
+  </script>
+</body>
+</html>

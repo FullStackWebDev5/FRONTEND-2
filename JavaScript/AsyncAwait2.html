@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async Await</title>
+</head>
+<body>
+  <button onclick="placeOrder()">Place order</button>
+  <script>
+    /*
+      # Example: Order tracking status for food ordered online
+        - Instantly: Order confirmed ✅
+        - After 2 seconds: Order is being prepared 🍲
+        - After 10 seconds: Order prepared 🎉
+        - After 5 seconds: Order handed over to the delivery person 📦
+        - After 3 seconds: Order is on the way 🛵
+        - After 8 seconds: Order has reached it's destination 📍
+        - After 4 seconds: Order has been delivered 😋
+
+        - Total time for processing order: 32 seconds
+    */
+
+    const orderBeingPrepared = () => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log('Order is being prepared 🍲')
+          resolve()
+        }, 2000)
+      })
+    }
+
+    const orderPrepared = () => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log('Order prepared 🎉')
+          resolve()
+        }, 10000)
+      })
+    }
+
+    const orderHandedOver = () => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log('Order handed over to the delivery person 📦')
+          resolve()
+        }, 5000)
+      })
+    }
+
+    const orderOnTheWay = () => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log('Order is on the way 🛵')
+          resolve()
+        }, 3000)
+      })
+    }
+
+    const orderReachedDestination = () => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log(`Order has reached it's destination 📍`)
+          resolve()
+        }, 8000)
+      })
+    }
+
+    const orderDelivered = () => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log('Order has been delivered 😋')
+          resolve()
+        }, 4000)
+      })
+    }
+
+    // const placeOrder = () => {
+    //   console.log('Order confirmed ✅')
+    //   orderBeingPrepared()
+    //     .then(() => orderPrepared())
+    //     .then(() => orderHandedOver())
+    //     .then(() => orderOnTheWay())
+    //     .then(() => orderReachedDestination())
+    //     .then(() => orderDelivered())
+    //     .then(() => console.log('Order processed successfully!'))
+    //     .catch(() => console.log('Something went wrong!'))
+    // }
+    
+    const placeOrder = async () => {
+      try {
+        console.log('Order confirmed ✅')
+        await orderBeingPrepared()
+        await orderPrepared()
+        await orderHandedOver()
+        await orderOnTheWay()
+        await orderReachedDestination()
+        await orderDelivered()
+      } catch (error) {
+        console.log('Something went wrong!')
+      }
+    }
+  </script>
+</body>
+</html>
