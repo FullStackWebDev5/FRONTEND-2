@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Handling</title>
+</head>
+<body>
+  <script>
+    /*
+      # Error Handling:
+        - Runtime errors in JS terminate the execution process and the rest of the code is not executed
+        - Error handling is a mechanism to handle these runtime errors and provide meaningful error messages to the user
+        - Syntax:
+          try {
+            // code which is probable to throw an error
+          } catch (error) {
+            // If error is thrown, handle it here
+          }
+        - finally {}: Execute regardless of error
+        - throw keyword: Throw erros
+          - Syntax: throw new Error('Custom error message')
+
+        - Additional pointers:
+          - If no errors: START -> try -> END
+          - If errors: START -> try -> catch -> END
+    */
+
+    // console.log('START')
+
+    // try {
+    //   console.log(eval('Priyanka+Adhikari'))
+    // } catch (error) {
+    //   console.log('Something went wrong\n', error)
+    // }
+
+    // console.log('END')
+
+    /* ----------------------- */
+    // console.log('START')
+
+    // try {
+    //   console.log(eval('1+1'))
+    // } catch (error) {
+    //   console.log('Something went wrong\n', error)
+    // } finally {
+    //   console.log('FINALLY')
+    // }
+
+    // console.log('END')
+
+    /* ----------------------- */
+    // const input = prompt('Enter your age')
+    // console.log('START') 
+    
+    // try {
+    //   const age = Number(input)
+    //   if(isNaN(age)) {
+    //     throw new Error('Age must be a number') 
+    //   }
+    // } catch (error) {
+    //   alert(error)
+    // }
+
+    // console.log('END')
+
+  </script>
+</body>
+</html>
