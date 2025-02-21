@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container text-center">
+    <h1 class="display-4">Users</h1>
+    <div id="users" class="row"></div>
+    <div class="d-flex justify-content-center" id="loading">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /*
+      # Fetch: Can be used to make network/API requests to get external data
+        - Works on promise principle
+        - Syntax:
+          fetch(url)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error))
+
+      # APIs: Application Programming Interface
+        - Medium through which client and server interact to each other
+
+      # References:
+        - https://www.geeksforgeeks.org/javascript-fetch-method/
+    */
+
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    //   .then(response => response.json())
+    //   .then(data => console.log(data))
+    //   .catch(error => console.error('Error:', error))
+
+    /* ----------------------------------- */
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     displayUsers(data)
+    //     document.getElementById('loading').style.visibility = 'hidden'
+    //   })
+    //   .catch(error => {
+    //     console.error('Error:', error)
+    //     document.getElementById('loading').style.visibility = 'hidden'
+    //   })
+
+    // function displayUsers(users) {
+    //   const parent = document.getElementById('users')
+
+    //   users.forEach(user => {
+    //     const li = document.createElement('li')
+    //     li.classList.add('list-group-item')
+    //     li.innerText = user.name
+
+    //     parent.append(li)
+    //   })
+    // }
+
+    /* ----------------------------------- */
+    fetch('https://reqres.in/api/users')
+      .then(response => response.json())
+      .then(res => {
+        displayUsers(res.data)
+        document.getElementById('loading').style.visibility = 'hidden'
+      })
+      .catch(error => {
+        console.error('Error:', error)
+        document.getElementById('loading').style.visibility = 'hidden'
+      })
+
+    function displayUsers(users) {
+      const parent = document.getElementById('users')
+
+      users.forEach(user => {
+        const colDiv = document.createElement('div')
+        colDiv.classList.add('col-md-4', 'mt-2')
+
+        const card = document.createElement('div')
+        card.classList.add('card')
+        card.style.width = '18rem'
+
+        const cardImg = document.createElement('img')
+        cardImg.src = user.avatar
+        cardImg.classList.add('card-img-top')
+
+        const cardBody = document.createElement('div')
+        cardBody.classList.add('card-body')
+
+        const cardTitle = document.createElement('h5')
+        cardTitle.classList.add('card-title')
+        cardTitle.innerText = `${user.first_name} ${user.last_name}`
+
+        const cardText = document.createElement('p')
+        cardText.classList.add('card-text')
+        cardText.innerText = user.email
+
+        const button = document.createElement('a')
+        button.href='#'
+        button.classList.add('btn', 'btn-primary')
+        button.innerText = 'Follow'
+
+        cardBody.append(cardTitle, cardText, button)
+        card.append(cardImg, cardBody)
+        colDiv.append(card)
+        parent.append(colDiv)
+      })
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!--
+  # Free APIs:
+    - https://reqres.in
+    - https://jsonplaceholder.typicode.com
+    - https://retool.com/api-generator
+-->
