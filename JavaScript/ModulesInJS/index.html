@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modules</title>
+</head>
+<body>
+  <script>
+    /*
+      # Modules in JS:
+        - Collection of code related to specific functionality
+        - Benifits:
+          - Achieve encapsulation
+          - Improves readability and maintainability
+          - Avoid redundancy (Using DRY principle)
+        - Syntax:
+          <script src="xyz.js" type="module">
+        - Import/Export:
+          - Export: An internal entity can be used by the external environment
+          - Import: An external entity can be used in the internal environment
+        - Types of exports/import:
+            - Default export/import: ('default' keyword)
+              - Can only export a single entity
+              - Syntax:
+                - Export: export default fun1
+                - Import: import fun1 from './relative-path'
+              - Rename entity during import: Can be done directly
+                - Syntax: import xyz from './relative-path
+            - Named export/import:
+              - Can export multiple entities
+              - Syntax:
+                - Export: 
+                  - export { fun1, fun2 }
+                  - Export during declaration
+                    export fun1
+                    export fun2
+                - Import: import { fun1, fun2 } from './relative-path'
+              - Rename entity during import: ('as' keyword)
+                - Syntax: 
+                  import { 
+                    fun1 as abc, 
+                    fun2 as xyz 
+                  } from './relative-path'
+        - Relative path:
+          - ../ Parent folder
+          - ./  Current folder
+          - /   Child folder
+    */
+  </script>
+  <script src="index.js" type="module"></script>
+  <script src="user.js" type="module"></script>
+  <script src="product.js" type="module"></script>
+  <script src="cart.js" type="module"></script>
+  <script src="order.js" type="module"></script>
+</body>
+</html>
