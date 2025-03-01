@@ -1,0 +1,64 @@
+body {
+  background: #0f0f0f;
+  color: #F1F1F1;
+}
+
+#search-container {
+  width: 500px;
+  margin: auto;
+}
+
+#badge-container {
+  margin: auto;
+}
+
+#badge-container .badge {
+  padding: 0 1.5em;
+  margin: 0.5em 1em;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 32px;
+  cursor: pointer;
+}
+
+iframe {
+  width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  iframe {
+    width: 500px;
+  }
+
+  #badge-container {
+    max-width: 100%;
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #search-container {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    height: 214px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 2px;
+  cursor: pointer;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #eee; 
+}
