@@ -6,7 +6,7 @@ const searchVideos = async () => {
   try {
     const query = document.getElementById('search-input').value
     console.log(query)
-    const API_URL = `https://youtube.googleapis.com/youtube/v3/search?maxResults=15&type=video&q=${query}&key=${API_KEY}`
+    const API_URL = `https://youtube.googleapis.com/youtube/v3/search?maxResults=15&type=video&videoDuration=long&q=${query}&key=${API_KEY}`
 
     const res = await fetch(API_URL)
     const data = await res.json()
